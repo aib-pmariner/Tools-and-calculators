@@ -1,0 +1,242 @@
+/***
+*
+
+Common styles for AIB interactive tools 
+
+*
+***/
+
+@import "colors.scss";
+@import "mixins.scss";
+@import "media.scss";
+@import "gradients.scss"; 
+
+.aib-interactive{	
+    
+    h1,h2,h3,h4,h5,h6{
+        color:$_DANK;
+        @include margpad(0);
+    }
+    
+    font-family: "Ropa Sans", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	.cta-block {       
+        
+		
+        .cta-box{
+            
+            width: 100%;
+            min-height: 50px;           
+            float: left;
+            text-align: center;
+			
+			p{
+			}
+
+			a{
+                 color: $_VERYDARKGREY  !important;
+			}
+
+			h3{
+                margin: 0 0 10px !important;
+                padding: 0 !important;
+			}
+
+			h4{
+                margin: 0 0 10px !important;
+                padding: 0  !important;   
+			}
+
+			.cta-button{
+
+                width: 40%;
+                margin-left: 30%;
+                margin-top:25px;
+                padding: 1px;
+                cursor:pointer;
+                background-color:$_SLIDER_RED_BUTTON;
+                
+                @include respond-to(iphone-landscape) {
+                    width: 100%;
+                    margin-left: 0
+                }
+                
+                p{
+                    font-size: 18px !important;
+                    font-weight: 100 !important;
+                    color: $_WHITE !important;
+                    line-height: 20px !important;
+                    margin: 20px 10px !important; 
+				}
+			} 
+		}
+
+		.email-box{
+            
+            margin: 10px 0;
+            padding: 0;
+            height: 0;
+            background: $_VERYLIGHTGREY;
+            @include transition(all .5s ease-in-out);
+            @include transform(scale (1,0));
+            
+            			
+            &.expanded{
+                height: 64px;
+                padding: 10px;
+                margin-top: 30px; 
+                @include transform(scale(1,1));
+                #button-sendemail{
+                    @include transform(scale(1,1));
+                }
+                
+                #sendemail{
+                    @include transform(scale(1,1));
+                }
+                
+                .swipe-text{
+                    
+                }
+			}
+              
+            .swipe-text{
+                display:none;
+                position:absolute;
+                bottom:2px;
+                padding-left:10px;   
+            }
+            
+            button{
+                padding: 5px !important;
+                font-size: 18px !important;
+                border: 2px solid $_SLIDER_RED_BUTTON !important;
+                background-color: $_SLIDER_RED_BUTTON !important;
+                color: $_WHITE !important;
+                margin-left: 10px !important;
+                cursor: pointer !important;
+            }
+
+			input{
+				padding: 10px !important;
+                font-size: 18px !important;
+                width: 60%;
+                background-color: none !important;
+                @include respond-to(iphone-portrait) {
+                     width: 55%;
+                }
+                
+				&#button-sendemail{
+                    width: 30%;
+                    margin-left: 5%;
+                    @include transition(all .5s ease-in-out);
+                    @include transform(scale(1,0));
+                    @include respond-to(iphone-landscape) {
+                        width:25%;
+                    }
+                    
+                    @include respond-to(iphone-portrait) {
+                        width:28%; 
+                    }
+				}
+                
+                &#sendemail{
+                    @include transition(all .5s ease-in-out);
+                    @include transform(scale(1,0));
+                }
+
+				.farketo-incomplete{
+                     background-color: $_PINK;
+				}
+			}            
+            
+
+			input[type="button"]{
+			                         
+                padding: 10px !important;
+                font-size: 18px !important;
+                border: 2px solid $_SLIDER_RED_BUTTON !important;
+                background-color: $_SLIDER_RED_BUTTON !important;
+                color: $_WHITE !important;
+                margin-left: 10px !important;
+                cursor: pointer !important;
+			}
+		}
+
+		.email-status{
+			@include transition(all .5s ease-in-out);
+            @include transform(scale(1,0)); 
+            
+            &.expanded{
+                @include transform(scale(1,1));
+                background: #fff;
+                height: 100px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 80%;
+			}
+
+			p{
+                 text-align:center !important;
+			}
+		}
+	}
+
+	#disclaimer-button{
+		cursor: pointer;
+        
+        h2{
+            margin: 0 5px 0 0 !important;
+            color:$_DANK !important;
+            padding: 0 !important;
+            font-size: 18px !important;
+            font-weight: 100 !important;
+            display: inline !important;
+		}
+
+		.arr{
+            display: inline-block;
+            width: 15px;
+            height: 15px;          
+            @include rotate(0);
+            @include transition(all .5s ease-in-out);           
+            
+			&.open{
+                 
+                @include rotate(180);
+				svg{                  
+                    width:15px !important;
+                    height:15px !important;
+                    
+                    path{
+                         fill: $_BLACK !important;
+					}
+				}
+			}
+		}
+	}
+
+
+	.terms-overlay {
+        @include transition(all .5s ease-in-out);
+        width: 100%; 
+        background: $_WHITE;
+        padding-top: 10px;
+        margin-top: 10px;
+        display: block;
+        cursor: pointer;
+        overflow: hidden;
+        max-height: 3000px;
+        
+		&.closed{
+             max-height: 0px;
+		}
+	}
+
+	.form-lightbox{
+	}
+
+	.clear{
+		clear:both;
+	}
+
+}

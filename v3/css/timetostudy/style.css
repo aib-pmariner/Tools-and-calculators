@@ -1,0 +1,1017 @@
+    .aib-interactive{
+        overflow:hidden;
+    } 
+
+
+    .aib-interactive .calc-wrap{
+        background:white;
+    }    
+    
+    .aib-interactive .study-time-wrap {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        position: relative; 
+        background-color: #1d8b2c;
+        align-items: center;
+    }
+
+    .aib-interactive .study-time-grab {
+        display:none;
+    }
+
+
+    @media only screen and (max-width:600px) {
+        .aib-interactive .study-time-wrap {
+            position:fixed;
+            top:-100px;
+            left:0px;
+            width:80%;
+            z-index:9999;
+          
+            
+              -webkit-transition: top .5s ease-in-out;
+             -moz-transition: top .5s ease-in-out;
+             -ms-transition: top .5s ease-in-out;
+             -o-transition: top .5s ease-in-out;
+                transition: top .5s ease-in-out;
+        }
+
+         .aib-interactive .study-time-wrap.shown {
+            top:20px;
+            
+         }
+
+         .aib-interactive .study-time-grab {
+            padding:10px;
+            background-color: #1d8b2c;
+         }
+
+         .aib-interactive .study-time-grab.amber{   
+             background-color: #eb7400;
+          } 
+          
+          .aib-interactive .study-time-grab.warning{   
+             background-color: #ba0e28;
+          }     
+
+         .aib-interactive .study-time-grab #studyhours{
+            font-size:2.5em;
+            color:#fff;
+         }
+
+         .aib-interactive .study-time-grab h4{
+            color:#fff;
+            margin: 0 0;   
+         }
+    }
+    
+    .aib-interactive .study-time-wrap.amber {
+        background-color: #eb7400;
+    }
+
+    .aib-interactive .study-time-wrap.warning {
+        background-color: #ba0e28
+    }   
+    
+    .aib-interactive .study-time-wrap .study-text {
+        width: 50%;
+        background-color: #39b54a;
+        display: flex;
+    }
+
+    .aib-interactive .study-time-wrap .study-bar-wrap{
+        display:none;
+        position:absolute;
+        bottom:5px;
+        background: #060;
+        margin:10px;
+        width:90%;
+        overflow:hidden;
+    }
+
+    .aib-interactive .study-time-wrap .study-bar-wrap.amber{
+        background: #994400; 
+    }
+
+     .aib-interactive .study-time-wrap .study-bar-wrap.warning{
+        background: #900; 
+     }
+
+    .aib-interactive .study-time-wrap .study-bar-wrap #study-bar{
+        
+        height:5px;
+        width:5%;
+        background-color:#fff;
+         -webkit-transition: width .5s ease-in-out;
+        -moz-transition: width .5s ease-in-out;
+        -ms-transition: width .5s ease-in-out;
+        -o-transition: width .5s ease-in-out;
+        transition: width .5s ease-in-out;
+    }
+
+    @media only screen and (max-width:600px) {
+        .aib-interactive .study-time-wrap .study-bar-wrap{
+             display:block;
+        }
+    
+        .aib-interactive .study-time-wrap .study-text {
+            width:100%;
+            height:30px;
+            position:absolute;
+            bottom:70px;
+        }
+
+
+        .aib-interactive .study-time-grab{          
+            width:100%;
+            height:100px;  
+            display:none;              
+        }
+
+        .aib-interactive .study-time-grab.shown{
+            display:block;
+        }
+
+        .aib-interactive .study-time-grab > div{
+            position:relative;
+            margin:0;
+            padding:0;
+            top:0px;
+            bottom:auto;
+        }
+
+         .aib-interactive .study-time-grab .study-time-wrap{
+            width:100% !important;
+         }
+
+        .aib-interactive .study-time-grab .study-time-wrap .study-text{
+            top:0px;           
+        }
+
+
+        .aib-interactive .study-time-grab .study-time-wrap .study-hours{
+            top: 30px;
+            position: absolute;
+            width: 100%;
+        } 
+
+        .aib-interactive .study-time-grab .study-time-wrap .study-bar-wrap{
+            bottom:auto;
+            top:70px;
+        }   
+
+     }
+    
+    .aib-interactive .study-time-wrap .study-text.warning {
+        background-color: #d43037
+    }
+    
+     .aib-interactive .study-time-wrap .study-text.amber {
+        background-color: #d66000
+    }
+
+    .aib-interactive .study-time-wrap .study-text h4 {
+        color: #fff;
+        line-height: 24px;
+        margin: 30px 20px;
+        padding: 0;
+        font-size: 20px;
+        font-weight: 200
+    }
+
+     @media only screen and (max-width:600px) {
+        .aib-interactive .study-time-wrap .study-text h4 {
+           line-height: 14px;
+           font-size: 18px;
+           margin: 7px 10px;
+        }
+     }
+
+    .aib-interactive .study-time-wrap .study-text.amber h4{
+        color:#fff;
+    }
+    
+    @media only screen and (max-width:480px) {
+        .aib-interactive .study-time-wrap .study-text h4 {
+            line-height: 20px;
+            font-size: 18px;
+           
+        }
+    }
+    
+    .aib-interactive .study-time-wrap .study-hours {
+        width: 50%;
+        background-color: #1d8b2c;
+       
+        display: flex;
+    }
+
+        
+    @media only screen and (max-width:600px) {
+        .aib-interactive .study-time-wrap .study-hours {
+
+             height:70px;
+        }
+    }       
+    
+    .aib-interactive .study-time-wrap .study-hours.warning {
+        background-color: #ba0e28
+    }
+
+    .aib-interactive .study-time-wrap .study-hours.amber {
+         background-color:#eb7400
+    }    
+    
+    .aib-interactive .study-time-wrap .study-hours #studyhours {
+        color: #fff;
+        font-size: 2.5em;
+        line-height: 1em;
+        width: 90%;
+        text-align: right;
+        margin-top: 7px;
+    }
+    
+    @media only screen and (max-width:480px) {
+        .aib-interactive .study-time-wrap .study-hours #studyhours {
+             text-align: left;
+             margin-left:10px;
+             font-size: 2em;
+        }
+    }
+    
+    .aib-interactive .study-time-wrap .study-hours .study-tick {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: -10px;
+        top: -14px;
+        border: 3px solid #1d8b2c;
+        background: #fff;
+        border-radius: 22px
+    }
+    
+    .aib-interactive .study-time-wrap .study-hours .study-tick.warning {
+        border: 3px solid #ba0e28
+    }
+
+    .aib-interactive .study-time-wrap .study-hours .study-tick.amber {
+        border: 3px solid #d66000;
+    }
+    
+    .aib-interactive .study-time-wrap .study-hours .study-tick img {
+        margin: 6px;
+        width: 70%;
+    }
+    
+    .aib-interactive .teqsa-text {
+            margin: 20px 0
+    }
+        
+    .aib-interactive .teqsa-text a {
+        color: #d43037
+    }
+    
+    .aib-interactive .selectors {
+        width: 100%
+    }
+    .aib-interactive .selectors .selecta {
+        position: relative;
+        width: 49%;
+        float: left;
+        padding: 20px 20px 80px;
+        background-color: #ececec;
+        margin-bottom: 2%;
+        min-height: 160px;
+    }
+    @media only screen and (max-width:1100px) {
+        .aib-interactive .selectors .selecta {
+            min-height: 200px;
+        }
+    }
+    @media only screen and (max-width:600px) {
+        .aib-interactive .selectors .selecta {
+            width: 100%;
+            min-height: 0;
+        }
+    }    
+    .aib-interactive .selectors .selecta.rhs {
+        float: right
+    }
+    
+    .aib-interactive .selectors .selecta.last {
+        float: left
+    }
+    
+    .aib-interactive .selectors .selecta p {
+        margin: 0 40px 0 60px;
+    }
+        
+    .aib-interactive .selectors .selecta .clock {
+       
+        width: 40px;
+        height: 40px;
+        background-size: 133%;
+        position: absolute;
+        top: 10px;
+    }
+    
+    .aib-interactive .selectors .selecta .clock.morning {
+        background-position: center 10px
+    }
+    
+    .aib-interactive .selectors .selecta .clock.evening {
+        background-position: center -30px
+    }
+    
+    .aib-interactive .selectors .selecta .clock.commute {
+        background-position: center -70px
+    }
+    
+    .aib-interactive .selectors .selecta .clock.work {
+        background-position: center -165px
+    }
+    
+    .aib-interactive .selectors .selecta .clock.weekend {
+        background-position: center -115px
+    }
+    .aib-interactive .selectors .selecta .info-icon { 
+        display: none;
+    }
+
+    .aib-interactive .selectors .selecta .info-button {
+        display: none;
+        width: 40px;
+        height: 40px;
+        background-image: url(http://www.aib.edu.au/custom/files/media/life_fit_icons.png);
+        background-size: 175%;
+        background-repeat: no-repeat;
+        background-position: center -285px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        cursor: pointer
+    }
+    
+    @media only screen and (max-width:640px) {
+        .aib-interactive .selectors .selecta .info-button {
+            margin-top: -60px;
+            margin-left: 36%
+        }
+    }
+    
+    @media only screen and (max-width:480px) {
+        .aib-interactive .selectors .selecta .info-button {
+            margin-left: 80%;
+            margin-top: -80px
+        }
+    }
+    
+    .aib-interactive .selectors .selecta .infobox {
+        position: absolute;
+        width: 260px;
+        top: 80px;
+        right: 30px;
+        background-color: #777779;
+        color: #fff;
+        padding: 10px;
+        display: none
+    }
+    
+    .aib-interactive .selectors .selecta .infobox.shown {
+        display: block
+    }
+    
+    .aib-interactive .selectors .selecta .infobox p {
+        font-size: 16px;
+        line-height: 20px;
+        margin: 5px 0;
+    }
+    
+    .aib-interactive .selectors .selecta .infobox .angletab {
+        top: -20px;
+        right: 0;
+        background-image: url("http://www.aib.edu.au/custom/files/media/life_fit_callout.png");
+        background-repeat: no-repeat;
+        background-position: top right;
+        position: absolute;
+        margin-left: 180px;
+        margin-top: -33px
+    }
+
+     .aib-interactive .selectors .selecta .hidden-slider{
+        position: absolute;
+        width:69%;
+        bottom:50px;
+        display:none;
+    }
+
+    .aib-interactive .selectors .selecta .hidden-slider.shown{
+        display:block;
+    }
+
+    .aib-interactive .selectors .selecta .hidden-slider .slider-track{
+        border:5px solid #090;
+        border-radius:10px;
+    }
+
+    .aib-interactive .selectors .selecta .hidden-slider .slider-knob{
+        position:absolute;
+        border:16px solid #0c0;
+        border-radius:20px;
+        bottom:-10px;
+    }
+
+    .aib-interactive .selectors .selecta .hidden-slider .slider-value{
+        position:absolute;
+        right: -27%;
+        font-size:36px;
+        font-weight:bold;
+        bottom:-15px;
+    } 
+
+
+     .aib-interactive .selectors .selecta .hidden-slider.warning .slider-track
+     {
+         border:5px solid #900;
+     }
+
+     .aib-interactive .selectors .selecta .hidden-slider.warning .slider-knob
+     {
+         border:16px solid #c00;
+     }
+
+
+     .aib-interactive .selectors .selecta .hidden-slider.amber .slider-track
+     {
+        border:5px solid #d66000;
+     }
+
+     .aib-interactive .selectors .selecta .hidden-slider.amber .slider-knob
+     {
+         border:16px solid #eb7400;
+     }
+
+    .aib-interactive .selectors .selecta input[type=range] {
+        width: 69%;
+        -webkit-appearance: none;
+        margin: 0;
+        position: absolute;
+        bottom: 40px;
+        left: 20px;
+    }
+    
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        .aib-interactive .selectors .selecta input[type=range] {
+            /* IE10+ CSS styles go here */
+            bottom: 0;
+        }
+    }
+
+    .aib-interactive .selectors .selecta input[type=range]:focus {
+        outline: 0
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range].warning::-webkit-slider-runnable-track {
+        background: #ba0e28
+    }
+
+    .aib-interactive .selectors .selecta input[type=range].amber::-webkit-slider-runnable-track {
+        background: #d66000
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 8.8px;
+        cursor: pointer;
+        background: #1d8b2c;
+        border-radius: 4.7px;
+        border: 0 solid rgba(1, 1, 1, 0)
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range].warning::-webkit-slider-thumb {
+        background: #c00
+    }
+
+    .aib-interactive .selectors .selecta input[type=range].amber::-webkit-slider-thumb {
+        background: #eb7400;
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range]::-webkit-slider-thumb {
+        border: 0 solid transparent;
+        height: 32px;
+        width: 32px;
+        border-radius: 32px;
+        background: #0c0;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -11.6px
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range].warning:focus::-webkit-slider-runnable-track {
+        background: #c00
+    }
+
+     .aib-interactive .selectors .selecta input[type=range].amber:focus::-webkit-slider-runnable-track {
+        background: #eb7400;
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #0c0
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range].warning::-moz-range-track {
+        background: #ba0e28
+    }
+
+     .aib-interactive .selectors .selecta input[type=range].amber::-moz-range-track {
+        background: #eb7400
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 8.8px;
+        cursor: pointer;
+        background: #1d8b2c;
+        border-radius: 4.7px;
+        border: 0 solid rgba(1, 1, 1, 0)
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range].warning::-moz-range-thumb {
+        background: #c00
+    }
+
+    .aib-interactive .selectors .selecta input[type=range].amber::-moz-range-thumb {
+        background: #eb7400
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range]::-moz-range-thumb {
+        border: 0 solid transparent;
+        height: 32px;
+        width: 32px;
+        border-radius: 16px;
+        background: #0c0;
+        cursor: pointer
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range]::-ms-track {
+        width: 100%;
+        height: 10px;
+        cursor: pointer;
+        background: 0 0;
+        border-color: transparent;
+        color: transparent;
+        border-width: 6px 0px;
+        overflow: visible;
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range].warning::-ms-fill-lower {
+        background: #ba0e28;
+         border-radius: 9.4px
+    }
+
+    .aib-interactive .selectors .selecta input[type=range].amber::-ms-fill-lower {
+        background: #eb7400;
+         border-radius: 9.4px
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range]::-ms-fill-lower {
+        background: #1d8b2c;
+        border: 0 solid rgba(1, 1, 1, 0);
+        border-radius: 9.4px
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range].warning::-ms-fill-upper {
+       background: #c00;
+       border-radius: 9.4px
+    }
+
+    .aib-interactive .selectors .selecta input[type=range].amber::-ms-fill-upper {
+       background: #d66000;
+       border-radius: 9.4px
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range]::-ms-fill-upper {
+        background: #0c0;
+        border: 0 solid rgba(1, 1, 1, 0);
+          border-radius: 9.4px
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range].warning::-ms-thumb {
+        background: #c00;
+        border-radius: 50%;
+       height:20px;
+       width:20px;
+    }
+
+    .aib-interactive .selectors .selecta input[type=range].amber::-ms-thumb {
+        background: #d66000;
+        border-radius: 50%;
+       height:20px;
+       width:20px;
+    }
+    
+    
+    .aib-interactive .selectors .selecta input[type=range]::-ms-thumb {
+        border: 0 solid transparent;
+        width: 20px;
+        border-radius: 50%;
+        background: #0c0;
+        cursor: pointer;
+        height: 20px
+    }
+    
+    
+    .aib-interactive .selectors .selecta input[type=range].warning:focus::-ms-fill-lower {
+        background: #ba0e28
+    }
+
+    .aib-interactive .selectors .selecta input[type=range].amber:focus::-ms-fill-lower {
+        background: #eb7400
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range]:focus::-ms-fill-lower {
+        background: #1d8b2c
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range].warning:focus::-ms-fill-upper {
+        background: #c00
+    }
+
+    .aib-interactive .selectors .selecta input[type=range].amber:focus::-ms-fill-upper {
+        background: #eb7400
+    }
+    
+    .aib-interactive .selectors .selecta input[type=range]:focus::-ms-fill-upper {
+        background: #0c0
+    }
+    
+    .aib-interactive .selectors .selecta input[type=text] {
+        width: 40px;
+        font-size: 36px;
+        font-weight: 700;
+        border: none;
+        background: rgba(255, 255, 255, 0);
+        position: absolute;
+        right: 6%;
+        bottom: 20px;
+        padding: 0;
+        text-align: right;
+    }
+    
+    .aib-interactive .terms-overlay {
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -ms-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+        width: 100%;
+        background: #fff;
+        padding-top: 10px;
+        margin-top: 10px;
+        display: block;
+        cursor: pointer;
+        overflow: hidden;
+        max-height: 2000px;
+    }
+    
+    .aib-interactive .call-request #call-button,
+    .aib-interactive .cta-block .cta-box .cta-button {
+        cursor: pointer;
+        background: #D33039;
+    }
+    
+    .aib-interactive .terms-overlay.closed {
+        max-height: 0px
+    }
+    
+    .aib-interactive #disclaimer-button {
+        cursor: pointer
+    }
+    
+    .aib-interactive #disclaimer-button h3 {
+        margin: 0 5px 0 0;
+        padding: 0;
+        font-size: 22px;
+        display: inline
+    }
+    
+    .aib-interactive #disclaimer-button .arr {
+        display: inline;
+        width: 40px;
+        height: 40px;
+        padding-top: 10px;
+        -moz-transform: rotate(0);
+        -o-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+    
+    .aib-interactive #disclaimer-button .arr.open svg {
+        -moz-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg)
+    }
+    
+    .aib-interactive #disclaimer-button .arr svg {
+        transition: all .5s ease-in-out;
+        -moz-transform: rotate(0);
+        -o-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+        width: 20px;
+        height: 20px
+    }
+    
+    .aib-interactive #disclaimer-button .arr svg,
+    .aib-interactive .cta-block .email-box {
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -ms-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out
+    }
+    
+    .aib-interactive #disclaimer-button .arr svg path {
+        fill: #000
+    }
+    
+       
+    .aib-interactive .cta-block {
+        width: 100%;
+        margin-top: 20px;
+        padding-bottom: 30px
+    }
+
+    @media only screen and (max-width:600px) {
+        .aib-interactive .cta-block {
+            /* width: 20%; */
+            position:fixed;
+            top:0px;
+            right:0;
+            padding-bottom:0;
+            margin:0;
+            z-index:9999;
+        } 
+
+       
+
+    }
+    
+    .aib-interactive .cta-block .cta-box {
+        width: 100%;
+        min-height: 50px;
+        float: left;
+        padding: 1%;
+        text-align: center
+    }
+
+    @media only screen and (max-width:600px) {
+        .aib-interactive .cta-block .cta-box {
+            position:absolute;
+            top:-100px;
+            padding:0;
+            left:80%;
+            -webkit-transition: top .5s ease-in-out;
+        -moz-transition: top .5s ease-in-out;
+        -ms-transition: top .5s ease-in-out;
+        -o-transition: top .5s ease-in-out
+           
+        } 
+
+        .aib-interactive .cta-block.shown .cta-box {
+              top:0;
+        } 
+
+          
+    }
+    
+    .aib-interactive .cta-block .cta-box a {
+        color: #666
+    }
+    
+    .aib-interactive .cta-block .cta-box h3,
+    .aib-interactive .cta-block .cta-box h4 {
+        margin: 0 0 10px;
+        padding: 0
+    }
+    
+    .aib-interactive .cta-block .cta-box .cta-button {
+        width: 100%;
+        margin: 0 auto;
+        padding: 1px 10px;
+        background: #D33039;
+        max-width: 340px;
+    }
+
+    
+    
+    .aib-interactive .cta-block .cta-box .cta-button p {
+        font-size: 16px;
+        font-weight: 100;
+        color: #fff;
+        line-height: 20px
+    }
+
+     @media only screen and (max-width:600px) {
+        .aib-interactive .cta-block .cta-box .cta-button {
+            background-color:#444;
+            background-image:url("http://www.aib.edu.au/custom/files/media/email-send-arrow.png");
+            background-repeat:no-repeat;
+            background-position: center 20px;
+            height:100px;
+            width:75px;
+            overflow:hidden;
+            margin:0 0;
+        }
+
+        .aib-interactive .cta-block .cta-box .cta-button p {
+            line-height: 100px;
+            max-width:50px;
+        }
+
+     }
+    
+    .aib-interactive .cta-block .email-box {
+        margin: 10px 0;
+        background: #f4f4f4;
+        transition: all .5s ease-in-out;
+        -moz-transform: scale(1, 0);
+        -o-transform: scale(1, 0);
+        -ms-transform: scale(1, 0);
+        -webkit-transform: scale(1, 0);
+        transform: scale(1, 0);
+        padding: 0;
+        height: 0
+    }
+
+     @media only screen and (max-width:600px) {
+        .aib-interactive .cta-block .email-box {
+            height: 60px;
+             background: #e4e4e4;
+             -moz-transform: scale(1, 1);
+             -o-transform: scale(1, 1);
+             -ms-transform: scale(1, 1);
+             -webkit-transform: scale(1, 1);
+             transform: scale(1, 1);
+             position:absolute;
+             top:-100px;
+             margin:0;
+             height:100px;
+             width:100%;
+             left:100%;
+        } 
+
+        .aib-interactive .cta-block.shown .email-box {
+             top:0px;
+        }   
+     }
+    
+    .aib-interactive .cta-block .email-box.expanded {
+        -moz-transform: scale(1, 1);
+        -o-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        height: 64px;
+        padding: 10px;
+        margin-top: 30px;
+    }
+
+     @media only screen and (max-width:600px) {
+        .aib-interactive .cta-block .email-box.expanded {
+            left:0%;
+             height: 100px;
+            padding: 0px;
+            margin-top: auto;
+        }
+     }
+    
+    .aib-interactive .cta-block .email-box input {
+        padding: 10px;
+        font-size: 18px;
+        width: 60%;
+        background-color: none
+    }
+
+    .aib-interactive .cta-block .email-box .swipe-text{
+        display:none;
+        position:absolute;
+        bottom:2px;
+        padding-left:10px;
+    }
+
+     @media only screen and (max-width:600px) {
+        .aib-interactive .cta-block .email-box input {
+            margin:30px 10px;
+            background:#fff;
+        }
+
+        .aib-interactive .cta-block .email-box .swipe-text{
+            display:block;
+        }
+     }
+    
+    .aib-interactive .cta-block .email-box input#button-sendemail {
+        width: 30%;
+        margin-left: 5%;
+    }
+
+    @media only screen and (max-width:600px) {
+        .aib-interactive .cta-block .email-box input#button-sendemail { 
+            margin:0;
+            width:75px;
+            padding:0;
+            float:right;
+            background:#444;
+        }
+    }
+    
+    .aib-interactive .cta-block .email-box input.farketo-incomplete {
+        background-color: pink
+    }
+    
+    .aib-interactive .cta-block .email-box button {
+        padding: 5px;
+        font-size: 18px;
+        border: 2px solid #d43037;
+        background-color: #d43037;
+        color: #fff;
+        margin-left: 10px;
+        cursor: pointer
+    }
+
+     @media only screen and (max-width:600px) {
+         .aib-interactive .cta-block .email-box button {
+            height:100%;
+            width:75px;
+            background-color: #444;
+            border:none;
+            margin:0;
+         }
+     }
+
+    .aib-interactive .cta-block .email-status{
+         transition: all .5s ease-in-out;
+        -moz-transform: scale(1, 0);
+        -o-transform: scale(1, 0);
+        -ms-transform: scale(1, 0);
+        -webkit-transform: scale(1, 0);
+        transform: scale(1, 0);
+    }
+
+     @media only screen and (max-width:600px) {
+        .aib-interactive .cta-block .email-status{
+            height:100px;
+            padding:10px;
+            background:#eee;
+            top:-100px;
+            position:absolute;
+        }
+
+        .aib-interactive .cta-block.shown .email-status{
+            top:0;
+        }
+     }
+
+    .aib-interactive .cta-block .email-status.expanded{
+         -moz-transform: scale(1, 1);
+        -o-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+
+
+    
+    .aib-interactive .cta-block .email-status p{
+        text-align:center;
+    }
+
+    .aib-interactive .call-request h2 {
+        margin-top: 0
+    }
+     
+    
+    
+    .aib-interactive .clear {
+        clear: both;
+        width: 100%
+    }
+    
+    .email-box input[type="button"]{
+       background-color:#d43037;
+        color:#fff
+    }
+
+     @media only screen and (max-width:600px) {
+           .email-box input[type="button"]{
+                height:100%;               
+                background-color:#444;
+                margin:0;
+                width:75px;
+           }
+     }

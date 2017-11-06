@@ -1,0 +1,27 @@
+var styleTag = document.createElement("style"),
+replace = ['<div', '</div>', '<table', '</table>', '<span', '</span>', '<input', '</input>', '<select', '</select>', '<option', '</option>', 'class'],
+search = ['<_d', '</_d>', '<_t', '</_t>', '<_sp', '</_sp>', '<_ip', '</_ip>', '<_sl', '</_sl>', '<_op', '</_op>', '_cl'];
+
+styleTag.innerHTML = css;
+(document.getElementsByTagName("head")[0] || document.documentElement).appendChild(styleTag);
+
+//document.getElementById("aib-module-01").appendChild(styleTag);
+
+
+for(var j=0; j<encodedMarkup.length; j++){
+	for(var i=0; i< search.length; i++){	
+		encodedMarkup[j] = encodedMarkup[j].replace(search[i], replace[i]);
+	}
+}
+
+// TODO: Paramaterise this so we can set the name of the div
+document.getElementById("aib-module-01").innerHTML = encodedMarkup.join("\r\n");
+$jQ(document).ready(function() {
+	window.setTimeout(function(){
+		init();
+	}, 500)
+	
+});
+
+
+

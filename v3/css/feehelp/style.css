@@ -1,0 +1,440 @@
+.aib-interactive,
+.aib-interactive .calc-wrap .head-block .head-left input   
+{
+    font-family: "DIN Next W01 Regular", Helvetica, Arial, "Lucida Grande", sans-serif
+}
+
+.aib-interactive .calc-wrap .head-block {
+    background: #353537
+}
+
+.aib-interactive .calc-wrap .head-block>div {
+    max-height: 200px
+}
+
+.aib-interactive .calc-wrap .head-block .head-left {
+    width: 50%;
+    float: left;
+    padding: 3%
+}
+
+.aib-interactive .calc-wrap .head-block .head-left p {
+    color: #fff;
+    font-size: 20px
+}
+
+.aib-interactive .calc-wrap .head-block .head-left input {
+    font-size: 18px;
+    font-weight: 100;
+    padding: 10px;
+    background: #fff;
+    width: 100%;
+}
+
+@media only screen and (max-width:480px) {
+    .aib-interactive {
+        overflow: hidden
+    }
+    .aib-interactive .calc-wrap .head-block .head-left {
+        width: 100%
+    }
+}
+
+.aib-interactive .calc-wrap .head-block .head-right {
+    width: 50%;
+    float: right;
+    overflow: hidden;
+    background-image: url(http://www.aib.edu.au/custom/files/media/fee_help_heading.jpg);
+    height: 200px;
+    background-size: cover;
+}
+
+.aib-interactive .calc-wrap .under-arrow {
+    width: 100%;
+    height: 17px;
+    background-image: url(http://aib.centricminds.com/custom/files/media/fee_help_top_arrow.png);
+    background-position: 50px -5px;
+    background-repeat: no-repeat
+}
+
+.aib-interactive .calc-wrap .pay-period{
+    background:  #f4f4f4;
+    margin:20px 0;
+
+}
+
+.aib-interactive .calc-wrap .pay-period h4{
+     display:inline-block;
+     margin-left:20px;
+}
+
+@media only screen and (max-width:480px) {
+    .aib-interactive .calc-wrap .pay-period h4{
+        margin-left:0px;
+    }
+
+    .aib-interactive .calc-wrap .pay-period{
+        padding:10px;
+    }
+ }
+
+.aib-interactive .calc-wrap .pay-period #pay-period-select{
+   
+     display:inline-block;
+}
+
+.aib-interactive .calc-wrap .pay-period #pay-period-select .pay-period-button{
+   display:inline-block;
+    font-size:18px;
+    border:1px solid #999;
+    height:40px;
+    line-height:40px;
+    padding:0px 10px;
+    background:#eee;
+    color:#bbb;
+    cursor:pointer;
+}
+
+@media only screen and (max-width:480px) {
+    .aib-interactive .calc-wrap .pay-period #pay-period-select .pay-period-button{
+        padding:0px 6px; 
+    }
+}
+
+.aib-interactive .calc-wrap .pay-period #pay-period-select .pay-period-button.selected{
+     color:#333;
+}
+
+    
+.aib-interactive .calc-wrap .calc-feehelp div h3 {
+    font-weight: 100;
+    font-size: 36px;
+    margin: 0;
+    padding: 0
+}
+
+.aib-interactive .calc-wrap .calc-feehelp div p {
+    margin: 5px 0 0;
+    font-size: 18px;
+    line-height: 22px
+}
+
+.aib-interactive .calc-wrap .calc-feehelp .calc-left {
+    width: 50%;
+    padding: 4% 3%;
+    float: left;
+    color: #fff;
+    background-color: #D33039
+}
+
+.aib-interactive .calc-wrap .calc-feehelp .calc-right {
+    width: 50%;
+    padding: 4% 3%;
+    float: right;
+    color: #fff;
+    background-color: #ba0e28
+}
+
+.aib-interactive .calc-wrap .calc-rates,
+.aib-interactive .calc-wrap .calc-totals {
+    margin-top: 20px;
+    background-color: #f4f4f4
+}
+
+@media only screen and (max-width:480px) {
+    .aib-interactive .calc-wrap .head-block .head-right {
+        display: none
+    }
+    .aib-interactive .calc-wrap .calc-feehelp div h3,
+    .aib-interactive .calc-wrap .calc-feehelp div p {
+        text-align: center
+    }
+    .aib-interactive .calc-wrap .calc-rates,
+    .aib-interactive .calc-wrap .calc-totals {
+        background-color: transparent
+    }
+}
+
+.aib-interactive .calc-wrap .calc-rates div h3,
+.aib-interactive .calc-wrap .calc-totals div h3 {
+    font-weight: 100;
+    font-size: 36px;
+    margin: 0;
+    padding: 0;
+    color: #d43037
+}
+
+ @media only screen and (max-width:480px) {
+    .aib-interactive .calc-wrap .calc-feehelp div h3 {
+         font-size: 24px;
+    }
+
+    .aib-interactive .calc-wrap .calc-feehelp div{
+        height:150px;
+    }
+}
+
+.aib-interactive .calc-wrap .calc-rates div p,
+.aib-interactive .calc-wrap .calc-totals div p {
+    margin: 5px 0 0;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000
+}
+
+.aib-interactive .calc-wrap .calc-rates .calc-left,
+.aib-interactive .calc-wrap .calc-totals .calc-left {
+    width: 50%;
+    padding: 3%;
+    float: left;
+    color: #fff;
+    background-color: #f4f4f4
+}
+
+@media only screen and (max-width:480px) {
+    .aib-interactive .calc-wrap .calc-rates .calc-left,
+    .aib-interactive .calc-wrap .calc-totals .calc-left {
+        width: 100%;
+        margin-bottom: 20px;
+        clear: left
+    }
+}
+
+.aib-interactive .calc-wrap .calc-rates .calc-right,
+.aib-interactive .calc-wrap .calc-totals .calc-right {
+    width: 50%;
+    padding: 3%;
+    float: right;
+    color: #fff;
+    background-color: #e2e2e2
+}
+
+@media only screen and (max-width:480px) {
+    .aib-interactive .calc-wrap .calc-rates .calc-right,
+    .aib-interactive .calc-wrap .calc-totals .calc-right {
+        width: 100%;
+        float: left
+    }
+}
+
+.aib-interactive .terms-overlay {
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    width: 100%;
+    background: #fff;
+    padding-top: 10px;
+    margin-top: 10px;
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    max-height: 3000px
+}
+
+   
+@media only screen and (max-width:480px) {
+    .aib-interactive .terms-overlay {
+        max-height: 3000px
+    }
+}
+
+.aib-interactive .terms-overlay.closed {
+    max-height: 0
+}
+
+.aib-interactive #disclaimer-button {
+    cursor: pointer
+}
+
+.aib-interactive #disclaimer-button h2 {
+    margin: 0 5px 0 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 100;
+    display: inline
+}
+
+.aib-interactive #disclaimer-button .arr {
+    display: inline;
+    width: 40px;
+    height: 40px;
+    padding-top: 10px;
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+}
+
+.aib-interactive #disclaimer-button .arr.open svg {
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+.aib-interactive #disclaimer-button .arr svg {
+    transition: all .5s ease-in-out;
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    width: 15px;
+    height: 15px
+}
+
+.aib-interactive #disclaimer-button .arr svg,
+.aib-interactive .cta-block .email-box {
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out
+}
+
+.aib-interactive #disclaimer-button .arr svg path {
+    fill: #000
+} 
+
+
+.aib-interactive .cta-block {
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 30px
+}
+
+.aib-interactive .cta-block .cta-box {
+    width: 100%;
+    min-height: 50px;
+    float: left;
+    text-align: center
+}
+
+.aib-interactive .cta-block .cta-box a {
+    color: #666
+}
+
+.aib-interactive .cta-block .cta-box h3,
+.aib-interactive .cta-block .cta-box h4 {
+    margin: 0 0 10px;
+    padding: 0
+}
+
+.aib-interactive .cta-block .cta-box .cta-button {
+    width: 40%;
+    margin-left: 30%;
+    padding: 1px;
+    background-color: #D33039;
+    cursor:pointer;
+}
+
+@media only screen and (max-width:480px) {
+    .aib-interactive .cta-block .cta-box .cta-button {
+        width: 100%;
+        margin-left: 0
+    }
+}
+
+.aib-interactive .cta-block .cta-box .cta-button p {
+    font-size: 18px;
+    font-weight: 100;
+    color: #fff;
+    line-height: 20px;
+    margin: 20px 10px !important;
+}
+
+.aib-interactive .cta-block .email-box {
+    margin: 10px 0;
+    background: #f4f4f4;
+    transition: all .5s ease-in-out;
+    -moz-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -webkit-transform: scale(1, 0);
+    transform: scale(1, 0);
+    padding: 0;
+    height: 0
+}
+
+.aib-interactive .cta-block .email-box.expanded {
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    height: 64px;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.aib-interactive .cta-block .email-box input {
+    padding: 10px;
+    font-size: 18px;
+    width: 60%;
+    background-color: none
+}
+
+.aib-interactive .cta-block .email-box input#button-sendemail {
+    width: 30%;
+    margin-left: 5%;
+}
+
+.aib-interactive .cta-block .email-box input.farketo-incomplete {
+    background-color: pink
+}
+
+.aib-interactive .cta-block .email-box button {
+    padding: 5px;
+    font-size: 18px;
+    border: 2px solid #d43037;
+    background-color: #d43037;
+    color: #fff;
+    margin-left: 10px;
+    cursor: pointer
+}
+
+.aib-interactive .cta-block .email-status{
+     transition: all .5s ease-in-out;
+    -moz-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -webkit-transform: scale(1, 0);
+    transform: scale(1, 0);
+}
+
+.aib-interactive .cta-block .email-status.expanded{
+     -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+}
+
+.aib-interactive .cta-block .email-status p{
+    text-align:center;
+}    
+  
+
+.aib-interactive .form-lightbox {
+    position: fixed;
+    width: 9999px;
+    height: 9999px;
+    background: rgba(0, 0, 0, .7);
+    top: -200px;
+    left: -300px;
+    z-index: 9997
+}   
+
+
+.aib-interactive .clear {
+    clear: both;
+    width: 100%
+}
+
+.email-box input[type="button"]{
+   background-color:#d43037;
+    color:#fff
+}

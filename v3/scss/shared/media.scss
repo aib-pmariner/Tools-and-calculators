@@ -1,0 +1,48 @@
+@mixin respond-to($media) {
+    @if $media==iphone-portrait {
+        @media only screen and ( max-width: 330px) {
+            @content;
+        }
+    }
+    @else if $media==iphone-landscape {
+        @media only screen and ( max-width: 480px) {
+            @content;
+        }
+    }
+    @else if $media==screen600 {
+        @media only screen and ( max-width: 599px) and ( min-width: 481px) {
+            @content;
+        }
+    }
+    @else if $media==small-screen {
+        @media only screen and ( max-width: 640px) {
+            @content;
+        }
+    }
+    @else if $media==ipad-portrait {
+        @media only screen and ( max-width: 768px) and ( min-width: 641px) {
+            @content;
+        }
+    }
+    @else if $media==ipad-landscape {
+        @media only screen and ( max-width: 1024px)and ( min-width: 769px) {
+            @content;
+        }
+    }
+    @else if $media==medium-screens {
+        @media only screen and (min-width: 1025px) and (max-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $media==wide-screens {
+        @media only screen and (min-width: 1201px) {
+            @content;
+        }
+    }
+    
+    @if $media==ms-high-contrast{
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+             @content;
+        }
+    }
+}

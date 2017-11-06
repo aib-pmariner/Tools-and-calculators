@@ -1,0 +1,516 @@
+/***
+*
+* Master styles for ROI calculator 
+*
+***/
+/***
+*
+
+Common styles for AIB interactive tools 
+
+*
+***/
+/***
+*
+
+** AIB Interactive Tool color pallette
+
+*
+***/
+/***
+*
+
+* AIB Interactive tools mixins
+
+*
+***/
+/***
+*
+* transitions 
+*
+***/
+/***
+*
+* margin + padding 
+*
+***/
+/***
+*
+* transforms 
+*
+***/
+/***
+*
+* rotate 
+*
+***/
+/***
+*
+* gradients 
+*
+***/
+/* line 14, ../shared/common.scss */
+.aib-interactive {
+  font-family: "Ropa Sans", Helvetica, Arial, "Lucida Grande", sans-serif; }
+  /* line 16, ../shared/common.scss */
+  .aib-interactive h1, .aib-interactive h2, .aib-interactive h3, .aib-interactive h4, .aib-interactive h5, .aib-interactive h6 {
+    color: #333;
+    margin: 0;
+    padding: 0; }
+  /* line 25, ../shared/common.scss */
+  .aib-interactive .cta-block .cta-box {
+    width: 100%;
+    min-height: 50px;
+    float: left;
+    text-align: center; }
+    /* line 35, ../shared/common.scss */
+    .aib-interactive .cta-block .cta-box a {
+      color: #666 !important; }
+    /* line 39, ../shared/common.scss */
+    .aib-interactive .cta-block .cta-box h3 {
+      margin: 0 0 10px !important;
+      padding: 0 !important; }
+    /* line 44, ../shared/common.scss */
+    .aib-interactive .cta-block .cta-box h4 {
+      margin: 0 0 10px !important;
+      padding: 0  !important; }
+    /* line 49, ../shared/common.scss */
+    .aib-interactive .cta-block .cta-box .cta-button {
+      width: 40%;
+      margin-left: 30%;
+      margin-top: 25px;
+      padding: 1px;
+      cursor: pointer;
+      background-color: #d43037; }
+      @media only screen and (max-width: 480px) {
+        /* line 49, ../shared/common.scss */
+        .aib-interactive .cta-block .cta-box .cta-button {
+          width: 100%;
+          margin-left: 0; } }
+      /* line 63, ../shared/common.scss */
+      .aib-interactive .cta-block .cta-box .cta-button p {
+        font-size: 18px !important;
+        font-weight: 100 !important;
+        color: #ffffff !important;
+        line-height: 20px !important;
+        margin: 20px 10px !important; }
+  /* line 73, ../shared/common.scss */
+  .aib-interactive .cta-block .email-box {
+    margin: 10px 0;
+    padding: 0;
+    height: 0;
+    background: #fafafa;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -moz-transform: scale 1, 0;
+    -o-transform: scale 1, 0;
+    -ms-transform: scale 1, 0;
+    -webkit-transform: scale 1, 0;
+    transform: scale 1, 0; }
+    /* line 83, ../shared/common.scss */
+    .aib-interactive .cta-block .email-box.expanded {
+      height: 64px;
+      padding: 10px;
+      margin-top: 30px;
+      -moz-transform: scale(1, 1);
+      -o-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+      transform: scale(1, 1); }
+      /* line 88, ../shared/common.scss */
+      .aib-interactive .cta-block .email-box.expanded #button-sendemail {
+        -moz-transform: scale(1, 1);
+        -o-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1); }
+      /* line 92, ../shared/common.scss */
+      .aib-interactive .cta-block .email-box.expanded #sendemail {
+        -moz-transform: scale(1, 1);
+        -o-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1); }
+    /* line 101, ../shared/common.scss */
+    .aib-interactive .cta-block .email-box .swipe-text {
+      display: none;
+      position: absolute;
+      bottom: 2px;
+      padding-left: 10px; }
+    /* line 108, ../shared/common.scss */
+    .aib-interactive .cta-block .email-box button {
+      padding: 5px !important;
+      font-size: 18px !important;
+      border: 2px solid #d43037 !important;
+      background-color: #d43037 !important;
+      color: #ffffff !important;
+      margin-left: 10px !important;
+      cursor: pointer !important; }
+    /* line 118, ../shared/common.scss */
+    .aib-interactive .cta-block .email-box input {
+      padding: 10px !important;
+      font-size: 18px !important;
+      width: 60%;
+      background-color: none !important; }
+      @media only screen and (max-width: 330px) {
+        /* line 118, ../shared/common.scss */
+        .aib-interactive .cta-block .email-box input {
+          width: 55%; } }
+      /* line 127, ../shared/common.scss */
+      .aib-interactive .cta-block .email-box input#button-sendemail {
+        width: 30%;
+        margin-left: 5%;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        -moz-transform: scale(1, 0);
+        -o-transform: scale(1, 0);
+        -ms-transform: scale(1, 0);
+        -webkit-transform: scale(1, 0);
+        transform: scale(1, 0); }
+        @media only screen and (max-width: 480px) {
+          /* line 127, ../shared/common.scss */
+          .aib-interactive .cta-block .email-box input#button-sendemail {
+            width: 25%; } }
+        @media only screen and (max-width: 330px) {
+          /* line 127, ../shared/common.scss */
+          .aib-interactive .cta-block .email-box input#button-sendemail {
+            width: 28%; } }
+      /* line 141, ../shared/common.scss */
+      .aib-interactive .cta-block .email-box input#sendemail {
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        -moz-transform: scale(1, 0);
+        -o-transform: scale(1, 0);
+        -ms-transform: scale(1, 0);
+        -webkit-transform: scale(1, 0);
+        transform: scale(1, 0); }
+      /* line 146, ../shared/common.scss */
+      .aib-interactive .cta-block .email-box input .farketo-incomplete {
+        background-color: pink; }
+    /* line 152, ../shared/common.scss */
+    .aib-interactive .cta-block .email-box input[type="button"] {
+      padding: 10px !important;
+      font-size: 18px !important;
+      border: 2px solid #d43037 !important;
+      background-color: #d43037 !important;
+      color: #ffffff !important;
+      margin-left: 10px !important;
+      cursor: pointer !important; }
+  /* line 164, ../shared/common.scss */
+  .aib-interactive .cta-block .email-status {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -moz-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -webkit-transform: scale(1, 0);
+    transform: scale(1, 0); }
+    /* line 168, ../shared/common.scss */
+    .aib-interactive .cta-block .email-status.expanded {
+      -moz-transform: scale(1, 1);
+      -o-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+      transform: scale(1, 1);
+      background: #fff;
+      height: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80%; }
+    /* line 178, ../shared/common.scss */
+    .aib-interactive .cta-block .email-status p {
+      text-align: center !important; }
+  /* line 184, ../shared/common.scss */
+  .aib-interactive #disclaimer-button {
+    cursor: pointer; }
+    /* line 187, ../shared/common.scss */
+    .aib-interactive #disclaimer-button h2 {
+      margin: 0 5px 0 0 !important;
+      color: #333 !important;
+      padding: 0 !important;
+      font-size: 18px !important;
+      font-weight: 100 !important;
+      display: inline !important; }
+    /* line 196, ../shared/common.scss */
+    .aib-interactive #disclaimer-button .arr {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out; }
+      /* line 203, ../shared/common.scss */
+      .aib-interactive #disclaimer-button .arr.open {
+        -moz-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg); }
+        /* line 206, ../shared/common.scss */
+        .aib-interactive #disclaimer-button .arr.open svg {
+          width: 15px !important;
+          height: 15px !important; }
+          /* line 210, ../shared/common.scss */
+          .aib-interactive #disclaimer-button .arr.open svg path {
+            fill: #000 !important; }
+  /* line 219, ../shared/common.scss */
+  .aib-interactive .terms-overlay {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    background: #ffffff;
+    padding-top: 10px;
+    margin-top: 10px;
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    max-height: 3000px; }
+    /* line 230, ../shared/common.scss */
+    .aib-interactive .terms-overlay.closed {
+      max-height: 0px; }
+  /* line 238, ../shared/common.scss */
+  .aib-interactive .clear {
+    clear: both; }
+
+@media only screen and (min-width: 1201px) {
+  /* line 14, main.scss */
+  .aib-interactive tbody, .aib-interactive td, .aib-interactive td {
+    display: table-cell; } }
+
+/* line 20, main.scss */
+.aib-interactive .screen-container .screen-pad {
+  padding: 0 0 20px; }
+  /* line 24, main.scss */
+  .aib-interactive .screen-container .screen-pad p {
+    margin-top: 0; }
+  /* line 28, main.scss */
+  .aib-interactive .screen-container .screen-pad h1 {
+    border-bottom: 1px solid #ccc; }
+  /* line 32, main.scss */
+  .aib-interactive .screen-container .screen-pad h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 32px;
+    display: inline; }
+  /* line 38, main.scss */
+  .aib-interactive .screen-container .screen-pad h3 {
+    margin: 20px 0 5px 0;
+    font-size: 18px; }
+  /* line 43, main.scss */
+  .aib-interactive .screen-container .screen-pad h4 {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    color: #000; }
+  /* line 49, main.scss */
+  .aib-interactive .screen-container .screen-pad .clear {
+    clear: both; }
+  @media only screen and (max-width: 330px) {
+    /* line 54, main.scss */
+    .aib-interactive .screen-container .screen-pad p {
+      line-height: 20px; }
+    /* line 58, main.scss */
+    .aib-interactive .screen-container .screen-pad h4 {
+      display: block; } }
+  @media only screen and (max-width: 480px) {
+    /* line 20, main.scss */
+    .aib-interactive .screen-container .screen-pad {
+      margin-top: -10px;
+      padding-top: 0; } }
+  /* line 70, main.scss */
+  .aib-interactive .screen-container .screen-pad .calc-wrap .clear {
+    clear: both; }
+  /* line 74, main.scss */
+  .aib-interactive .screen-container .screen-pad .calc-wrap .left-column {
+    width: 49%;
+    float: left; }
+    @media only screen and (max-width: 640px) {
+      /* line 74, main.scss */
+      .aib-interactive .screen-container .screen-pad .calc-wrap .left-column {
+        width: 100%; } }
+    /* line 83, main.scss */
+    .aib-interactive .screen-container .screen-pad .calc-wrap .left-column .selectors {
+      width: 100%;
+      background: #333;
+      float: left;
+      padding: 20px 0; }
+      /* line 89, main.scss */
+      .aib-interactive .screen-container .screen-pad .calc-wrap .left-column .selectors .selecta {
+        width: 80%;
+        margin-top: 16px;
+        margin-left: 10%; }
+        @media only screen and (max-width: 640px) {
+          /* line 89, main.scss */
+          .aib-interactive .screen-container .screen-pad .calc-wrap .left-column .selectors .selecta {
+            height: auto; } }
+        @media only screen and (max-width: 330px) {
+          /* line 89, main.scss */
+          .aib-interactive .screen-container .screen-pad .calc-wrap .left-column .selectors .selecta {
+            height: auto; } }
+        /* line 102, main.scss */
+        .aib-interactive .screen-container .screen-pad .calc-wrap .left-column .selectors .selecta p {
+          color: #fff; }
+        /* line 106, main.scss */
+        .aib-interactive .screen-container .screen-pad .calc-wrap .left-column .selectors .selecta select {
+          z-index: 1;
+          font-size: 16px;
+          padding: 7px;
+          margin: 0;
+          width: 100%;
+          background-color: #ffffff;
+          font-family: "Ropa Sans", sans-serif; }
+        /* line 119, main.scss */
+        .aib-interactive .screen-container .screen-pad .calc-wrap .left-column .selectors .selecta input {
+          width: 100%;
+          font-size: 16px;
+          padding: 7px;
+          margin: 0;
+          width: 100%;
+          background-color: #ffffff;
+          font-family: "Ropa Sans", sans-serif; }
+      /* line 130, main.scss */
+      .aib-interactive .screen-container .screen-pad .calc-wrap .left-column .selectors .roi-summary {
+        padding: .1px 20px 20px;
+        color: #fff;
+        width: 73%;
+        margin-left: 10%;
+        background: #d43037;
+        margin-bottom: 20px;
+        margin-top: 20px; }
+        /* line 139, main.scss */
+        .aib-interactive .screen-container .screen-pad .calc-wrap .left-column .selectors .roi-summary h4 {
+          display: block; }
+        /* line 143, main.scss */
+        .aib-interactive .screen-container .screen-pad .calc-wrap .left-column .selectors .roi-summary h2, .aib-interactive .screen-container .screen-pad .calc-wrap .left-column .selectors .roi-summary h3, .aib-interactive .screen-container .screen-pad .calc-wrap .left-column .selectors .roi-summary h4, .aib-interactive .screen-container .screen-pad .calc-wrap .left-column .selectors .roi-summary h5, .aib-interactive .screen-container .screen-pad .calc-wrap .left-column .selectors .roi-summary h6 {
+          color: #ffffff; }
+  /* line 151, main.scss */
+  .aib-interactive .screen-container .screen-pad .calc-wrap .right-column {
+    width: 49%;
+    float: right; }
+    @media only screen and (max-width: 640px) {
+      /* line 151, main.scss */
+      .aib-interactive .screen-container .screen-pad .calc-wrap .right-column {
+        width: 100%;
+        margin-top: 20px; } }
+    @media only screen and (max-width: 480px) {
+      /* line 151, main.scss */
+      .aib-interactive .screen-container .screen-pad .calc-wrap .right-column {
+        width: 100%; } }
+    /* line 165, main.scss */
+    .aib-interactive .screen-container .screen-pad .calc-wrap .right-column .chart-wrap {
+      width: 94%;
+      border: 1px solid #333;
+      padding: 15px; }
+      /* line 171, main.scss */
+      .aib-interactive .screen-container .screen-pad .calc-wrap .right-column .chart-wrap #roi-chart {
+        width: 98%;
+        height: 340px; }
+    /* line 177, main.scss */
+    .aib-interactive .screen-container .screen-pad .calc-wrap .right-column .result {
+      float: right;
+      width: 100%;
+      margin-top: 20px;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out; }
+      /* line 184, main.scss */
+      .aib-interactive .screen-container .screen-pad .calc-wrap .right-column .result .table-wrap {
+        border: 1px solid #333;
+        padding: 10px; }
+  /* line 210, main.scss */
+  .aib-interactive .screen-container .screen-pad .calc-wrap .notes {
+    margin-top: 20px; }
+  /* line 215, main.scss */
+  .aib-interactive .screen-container .screen-pad .calc-wrap .under-arrow {
+    width: 100%;
+    height: 17px;
+    background-image: url(//www.aib.edu.au/custom/files/media/fee_help_top_arrow.png);
+    background-position: 50px -5px;
+    background-repeat: no-repeat; }
+  /* line 227, main.scss */
+  .aib-interactive .screen-container .screen-pad .c3-axis.c3-axis-x path.domain {
+    stroke-width: 1px;
+    transform: scaleY(0.1); }
+  /* line 236, main.scss */
+  .aib-interactive .screen-container .screen-pad .c3-axis.c3-axis-y path.domain {
+    stroke-width: 1px;
+    transform: scaleX(0.1); }
+  /* line 246, main.scss */
+  .aib-interactive .screen-container .screen-pad .c3-shapes-FEE-help path.c3-bar {
+    stroke-width: 0; }
+  /* line 255, main.scss */
+  .aib-interactive .screen-container .screen-pad .c3-chart-lines .c3-chart-line g line {
+    fill: none !important; }
+  /* line 258, main.scss */
+  .aib-interactive .screen-container .screen-pad .c3-chart-lines .c3-chart-line g path {
+    fill: none !important; }
+  /* line 265, main.scss */
+  .aib-interactive .screen-container .screen-pad .c3-tooltip-container {
+    background: rgba(22, 22, 22, 0.5) !important;
+    padding: 5px !important;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4) !important;
+    min-width: 175px !important; }
+    /* line 272, main.scss */
+    .aib-interactive .screen-container .screen-pad .c3-tooltip-container p {
+      margin-bottom: 0 !important;
+      margin-left: 5px !important;
+      color: #ffffff !important; }
+    /* line 278, main.scss */
+    .aib-interactive .screen-container .screen-pad .c3-tooltip-container h4 {
+      color: #ffffff !important;
+      width: 100% !important;
+      display: block !important;
+      float: left !important;
+      text-indent: 5px !important; }
+
+/* line 290, main.scss */
+.aib-interactive .terms-overlay .mba-bonus {
+  width: 99%;
+  margin-left: 0; }
+  /* line 294, main.scss */
+  .aib-interactive .terms-overlay .mba-bonus table {
+    width: 100%;
+    padding: 0;
+    max-width: 640px;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+    border-collapse: unset; }
+    /* line 303, main.scss */
+    .aib-interactive .terms-overlay .mba-bonus table tr th {
+      margin: 0;
+      padding: 5px;
+      text-align: center;
+      background: #000;
+      color: #ffffff; }
+    /* line 311, main.scss */
+    .aib-interactive .terms-overlay .mba-bonus table tr td {
+      text-align: center;
+      margin: 0;
+      padding: 5px; }
+
+/*# sourceMappingURL=main.css.map */

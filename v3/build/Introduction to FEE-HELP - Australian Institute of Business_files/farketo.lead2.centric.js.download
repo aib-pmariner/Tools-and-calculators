@@ -1,0 +1,387 @@
+jQuery(document).ready(function(){
+
+	var leadId = -1,
+	formStep = 0,
+	inputFieldTypes = "input, select, textarea",
+	endpointDomain = "https://504-vsv-078",	
+	authURL = 	"http://www.aibgraduation.com/rest/jsonp_auth.php",
+	proxyURL =  "http://www.aibgraduation.com/rest/jsonp_proxy.php",
+	ledGenURL = "rest/newlead.php",
+	form_id = "farketo2",
+
+	getToken = function(){	
+		 return jQuery.ajax({
+            type: "GET",
+            url: authURL,           
+            dataType: "jsonp"                  
+        });
+	},	
+
+		
+	mktoREST = function(mode, updateData){					
+
+		// client side REST for Marketo! 		
+		
+		return jQuery.ajax({
+			type: mode,
+			crossDomain: true,
+			crossOrigin: true,
+			data: updateData,
+			dataType: "jsonp",      
+			url: proxyURL
+		});					
+	},			
+
+	associateLead = function(id, updateData, access_token){
+		
+		// associate updated data with a Marketo lead
+
+		if(jQuery.cookie('_mkto_trk') != null){		
+			cookie = jQuery.cookie('_mkto_trk').replace("id:", "").replace("&", "%26");				
+			updateData.marketo[0].endPoint = endpointDomain + ".mktorest.com/rest/v1/leads/" + id +  "/associate.json?access_token=" + access_token +  "&cookie=" + cookie;
+			//updateData.marketo[0].action = "associate";
+			
+			var url = 'http://www.aibgraduation.com/rest/associate_lead.php';
+			//url = 'http://www.aibgraduation.com/rest/jsonp_proxy.php';
+
+			return jQuery.ajax({
+			      url: url,
+			      type: 'POST',
+			      data : updateData,
+			      dataType: "json",      
+			      success: function(d){			      
+			      	//console.log(d);
+			      },
+
+    		});
+
+    		/*.complete(function(f){    	
+    			//console.log(f);
+    		});
+    		*/
+
+
+		}else{
+			return false;
+		}
+	},
+
+	getLeadId = function(accessToken){			
+		// interrogate a munchkin cookie, then use it to lookup the lead's ID in Marketo
+		
+		var cookie = "",
+		qs = "",
+		qs_arr = [],
+		pv = "",
+		resObj = {},
+		dataObj = {},
+		el,
+		searchData,
+		endPoint = "mktorest.com/rest/v1/leads.json";
+
+		if(jQuery.cookie('_mkto_trk') != null){					
+			cookie = jQuery.cookie('_mkto_trk').replace("id:", "").replace("&", "%26");
+			lookUpURL =  endpointDomain + "." + endPoint + "?access_token=" + accessToken + "&filterType=cookie&filterValues=" + cookie + "&fields=cookies,email",		
+
+			searchData =
+			{ 
+				"marketo": "&filterType=cookie&filterValues=" + cookie + "&fields=cookies,email",
+				"auth": accessToken
+			}; 	
+
+			//console.log(searchData);
+
+			// if the leadId is in the query string...
+			if( window.location.search.indexOf("leadid") > -1){	
+				qs = window.location.search.replace("?", "");
+				qs_arr = qs.split("&");
+
+				for(el in qs_arr){
+					pv = qs_arr[el].split("=");  
+					if(pv[0] == "leadid"){								
+						leadId =  pv[1];
+						resObj.id = leadId;
+						return resObj;
+					}
+				}
+			}else{	
+				// ...otherwise, use the munchkin cookie				
+				//console.log(mktoREST("GET", searchData));
+				return mktoREST("GET", searchData);							
+			}
+		}else{
+			resObj.id = -l;
+			return resObj;
+		}	
+
+	},	
+
+	getLeadfromMarketo = function(id, accessToken){
+
+
+	},
+
+	updateLeadInfo = function(fieldValues){
+		
+		getToken().then(function(d){
+			var dataObj = 	jQuery.parseJSON(d),
+			access_token = dataObj.access_token;					
+
+			getLeadId(dataObj.access_token).then(function(d){									
+
+				var updateData =
+				{ 
+					"marketo":[
+							{
+								"action": "updateOnly", 
+								"lookupField": "id",
+								"input": [{ 
+						    		"id": d.result[0].id						
+								}]
+							}],
+					"auth": access_token
+				}; 
+
+				for(var fo in fieldValues){
+					
+					updateData["marketo"][0]["input"][0][fo] = fieldValues[fo];
+				}				
+
+				// Update this Marketo lead	
+
+				var url = 'http://www.aibgraduation.com/rest/jsonp_proxy.php',
+					updateResponse = jQuery.ajax({
+				    	url: url,
+				      	type: 'POST',
+				      	data : updateData,
+				      	dataType: "json"
+	    			});
+    			
+
+    			updateResponse.complete(function(e){
+    				
+    				var response = e.responseText.replace("callback({", "{").replace(");", ""),
+    					dataObj = jQuery.parseJSON(response);
+
+    				if(dataObj.success == true) {
+    						
+    					formStep++;
+    					nextFormScreen(formStep);
+    				}
+    			});
+				
+			});	
+		});				
+	},	
+
+	getFormValues = function(frm, fieldObj){		
+		
+		jQuery.each(frm.find(inputFieldTypes), function(){
+			
+			var key = jQuery(this).attr("id"),
+			val =  jQuery(this).val();			
+			fieldObj[key] = val;
+		})
+		return fieldObj; 
+	},			
+
+	validText = function(txt, length){
+		return txt.length >  length;
+	},
+
+	validTel = function(phone){
+		return /^[0-9\+\(\)\/]{10}\d+$/.test(phone);
+	},
+
+	validEmail = function(email){
+	    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	    return re.test(email);
+	},
+
+	nextFormScreen = function(step){
+		jQuery("#" + form_id +" .farketo-loading").removeClass("shown");
+		//console.log("#" + form_id + " .farketo-step.step-" + step);
+		jQuery("#" + form_id + " .farketo-step.step-" + step).addClass("shown");
+	},
+
+	validateForm = function(form, step){
+		
+		var formScreen = jQuery("#" + form_id + " .farketo-step.step-" + step),
+		stepElements = formScreen.find(inputFieldTypes),
+		errMsg = false,
+		formElement,
+		formVal,
+		label;
+		
+		jQuery.each(stepElements, function(){
+			formElement = jQuery(this);
+			formVal = jQuery(this).val();
+			label = jQuery("#" + form_id + " label[for='"+jQuery(this).attr('id')+"']").text();
+			formElement.removeClass("farketo-incomplete");												
+			
+			switch(formElement.attr("type")){
+				case "text":
+					if(!validText(formVal, 2)){
+						errMsg = label + " field hasn't been completed";
+						formElement.addClass("farketo-incomplete");
+					}
+					break;
+
+				case "email":
+					if(!validEmail(formVal)){
+						errMsg = label + " requires a valid email address";
+						formElement.addClass("farketo-incomplete");
+					}
+					break;	
+
+				case "tel":
+					if(!validTel(formVal)){
+						errMsg = label + " requires a valid phone number";
+						formElement.addClass("farketo-incomplete");
+					}
+					break;		
+			}
+
+			errMsg != false ? jQuery("#" + form_id + " #button-step-" + step).addClass("inactive") : jQuery("#" + form_id + " #button-step-" + step).removeClass("inactive")			
+		})
+
+		return errMsg;
+	},
+
+	leadCreated = function(d){
+		console.log("Lead created");
+	},
+
+	createNewLead = function(formScreen){
+		getToken().then(function(d){
+			var dataObj = 	jQuery.parseJSON(d),
+			access_token = dataObj.access_token,
+
+			updateData =
+			{ 
+				"marketo":[
+						{
+							"action": "createOnly", 
+							"input": []
+						}
+				],
+				"auth": access_token
+			},
+
+			fieldObj = {};
+			fieldObj = getFormValues(formScreen, fieldObj);
+			updateData.marketo[0].input.push(fieldObj);	
+			//console.log(formScreen);
+			//console.log(fieldObj);
+			//console.log(updateData);
+
+			// first, create  a new lead in Marketo using at the minimum, the e-mail field
+
+			jQuery.ajax({
+			      url: 'http://www.aibgraduation.com/rest/create_lead.php',
+			      type: 'POST',
+			      data : updateData,
+			      dataType: "json"
+    		}).complete(function(f){    			
+    			// response is actually cross-origin jsonp, so we strip the wrapper and convert to json
+    			var response = f.responseText.replace("({", "{").replace(");", ""),
+    			dataObj = jQuery.parseJSON(response);
+    			//console.log(response);
+    			//console.log(dataObj);
+    			leadId = dataObj.result[0].id;
+				
+    			// then associate the lead with the munchkin coookie so we can track it
+				var newLead = associateLead(leadId, updateData,  access_token);
+				
+				newLead.complete(function(d){
+					//console.log(d);
+					var response = d.responseText.replace("({", "{").replace(");", ""),
+    				dataObj = jQuery.parseJSON(response);
+
+    				if(dataObj.success){
+    					formStep++;
+						nextFormScreen(formStep);
+    				}else{
+    					console.log("Error - could not create lead");
+    				}
+    				//console.log(dataObj.success);
+    				return dataObj.success;
+				});
+
+    		});    		
+
+    		
+
+
+    	});		
+
+	},
+
+	ld = getToken().success(
+		function(d){			
+			
+			var dataObj = jQuery.parseJSON(d);
+			getLeadId(dataObj.access_token).then(function(d){							
+				//console.log(d);
+				if(d.success == true){
+					if(d.result.length < 1){
+						console.log("No matching lead found");
+					}else{
+						console.log("Lead found!");	
+						console.log(d);
+					}
+				}
+				return d;
+			})					
+		}
+	);	
+
+	
+	//jQuery("#enquiry__form").hide();
+
+
+	jQuery.each(jQuery("#" + form_id + " .farketo-form form").find(inputFieldTypes), function(){
+		jQuery(this).blur(function(){
+			jQuery(this).removeClass("farketo-incomplete");
+			jQuery.each(jQuery('#' + form_id + ' .farketo-error'), function(){ 
+				jQuery(this).removeClass("shown");
+			});			
+		});
+	})	
+
+
+	jQuery("button").click(function(){
+		
+		// we only support ONE lead form on a page at this stage. That may change in future. 	
+
+		var clickSrc = this.id, 	
+		completeForm = validateForm(jQuery("#" + form_id), formStep), 				
+		formScreen = jQuery("#" + form_id + " .farketo-step.step-" + formStep);
+
+
+		
+		if(jQuery(this).parent().parent().attr("id").indexOf("farketo") > -1){
+			if(completeForm){
+				jQuery(formScreen).find('.farketo-error').addClass("shown").text(completeForm);
+			}else{
+				jQuery("#" + form_id + " .farketo-loading").addClass("shown");
+				jQuery.each(jQuery("#" + form_id + " .farketo-step"), function(){
+					jQuery(this).removeClass("shown");
+				});	
+
+				
+				if(formStep < 1){
+					createNewLead(formScreen)
+				}else{
+					var fieldObj = {};
+					fieldObj = getFormValues(formScreen, fieldObj);				
+				
+					updateLeadInfo(fieldObj);		
+				}
+				//console.log("New lead created");					
+				
+			}
+		}
+									
+	});
+});	

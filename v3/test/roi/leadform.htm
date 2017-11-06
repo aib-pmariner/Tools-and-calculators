@@ -1,0 +1,56 @@
+<html>
+	<head>
+	</head>
+	<body>
+		
+		<script src="//app-sn03.marketo.com/js/forms2/js/forms2.min.js"></script>
+
+		<!-- <form style="background-color:#ccaacc" id="mktoForm_1151"  style="display:block"></form> -->
+		 <form style="background-color:#ccaacc" style="display:block"></form>
+		
+		<!-- <script>MktoForms2.loadForm("//app-sn03.marketo.com", "895-KSX-008", 1151)</script> -->
+		
+		<script>
+			
+		window.addEventListener("message", function(event) { 
+			
+			var data = event.data;	
+			var command = data.command;
+			var formId = 1151;
+
+			command = "load";
+			
+			if(command == "load"){
+				formId =  data.formId;
+				console.log(formId)
+				document.forms[0].id = "mktoForm_" + formId;
+				MktoForms2.loadForm("//app-sn03.marketo.com", "895-KSX-008", formId);
+			}
+
+			if(command == "update"){
+				var formFields = data.formFields;
+				var frm = event.target.MktoForms2.getForm(formId);  
+				frm.addHiddenFields(formFields);
+			}	
+			
+			/*
+			frm.addHiddenFields({
+                //These are the values which will be submitted to Marketo
+                "Email":data.Email,
+                "roiSalary":data.roiSalary,
+                "roiWorkYears":data.roiWorkYears,
+                "roiImage": data.roiImage,  
+                "roiAge": data.roiAge                               
+            });
+            */ 
+
+
+			var ev2 = {};
+			ev2.msg = "Hello!";
+			parent.window.postMessage(ev2, '*'); 
+		    
+		}); 
+
+		</script>
+	</body>
+</html>	

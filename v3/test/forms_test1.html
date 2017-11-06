@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<script>		
+
+		window.addEventListener("message", function(event) { 				
+		    var data = event.data;
+		    console.log(data);
+		});
+
+		function updateEmail(){
+			var frame = document.getElementById('sonar-form');
+			var obj = {};
+			var emailObj = {};
+			
+			emailObj.Email="_zzz_Ne88rkNerk@nerkernerk.co.za";
+			emailObj.roiSalary = 90210; 
+			emailObj.roiWorkYears = 10;
+			emailObj.roiImage = "http://www.google.com/images/test.png";
+			emailObj.roiAge = "30-35";
+			
+			obj.formFields = emailObj;
+			obj.formId = 1151;
+            obj.command = "load";
+
+			// this actually submits the form remotely if all hidden fields are populated
+			frame.contentWindow.postMessage(obj, '*'); 
+			
+		}
+
+		</script>
+	</head>
+	<body>
+		<iframe id="sonar-form" src="//ww2.aib.edu.au/sonar/leadforms/mktoform.php?formId=1151"></iframe>
+		<button onclick="updateEmail()">Update fields</button>
+	</body>
+</html>	

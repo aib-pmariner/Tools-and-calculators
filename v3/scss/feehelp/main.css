@@ -1,0 +1,526 @@
+/***
+*
+* Master styles for FEE Help calculator 
+*
+***/
+/***
+*
+
+Common styles for AIB interactive tools 
+
+*
+***/
+/***
+*
+
+** AIB Interactive Tool color pallette
+
+*
+***/
+/***
+*
+
+* AIB Interactive tools mixins
+
+*
+***/
+/***
+*
+* transitions 
+*
+***/
+/***
+*
+* margin + padding 
+*
+***/
+/***
+*
+* transforms 
+*
+***/
+/***
+*
+* rotate 
+*
+***/
+/***
+*
+* gradients 
+*
+***/
+/* line 14, ../shared/common.scss */
+.aib-interactive {
+  font-family: "Ropa Sans", Helvetica, Arial, "Lucida Grande", sans-serif; }
+  /* line 16, ../shared/common.scss */
+  .aib-interactive h1, .aib-interactive h2, .aib-interactive h3, .aib-interactive h4, .aib-interactive h5, .aib-interactive h6 {
+    color: #333;
+    margin: 0;
+    padding: 0; }
+  /* line 25, ../shared/common.scss */
+  .aib-interactive .cta-block .cta-box {
+    width: 100%;
+    min-height: 50px;
+    float: left;
+    text-align: center; }
+    /* line 35, ../shared/common.scss */
+    .aib-interactive .cta-block .cta-box a {
+      color: #666 !important; }
+    /* line 39, ../shared/common.scss */
+    .aib-interactive .cta-block .cta-box h3 {
+      margin: 0 0 10px !important;
+      padding: 0 !important; }
+    /* line 44, ../shared/common.scss */
+    .aib-interactive .cta-block .cta-box h4 {
+      margin: 0 0 10px !important;
+      padding: 0  !important; }
+    /* line 49, ../shared/common.scss */
+    .aib-interactive .cta-block .cta-box .cta-button {
+      width: 40%;
+      margin-left: 30%;
+      margin-top: 25px;
+      padding: 1px;
+      cursor: pointer;
+      background-color: #d43037; }
+      @media only screen and (max-width: 480px) {
+        /* line 49, ../shared/common.scss */
+        .aib-interactive .cta-block .cta-box .cta-button {
+          width: 100%;
+          margin-left: 0; } }
+      /* line 63, ../shared/common.scss */
+      .aib-interactive .cta-block .cta-box .cta-button p {
+        font-size: 18px !important;
+        font-weight: 100 !important;
+        color: #ffffff !important;
+        line-height: 20px !important;
+        margin: 20px 10px !important; }
+  /* line 73, ../shared/common.scss */
+  .aib-interactive .cta-block .email-box {
+    margin: 10px 0;
+    padding: 0;
+    height: 0;
+    background: #fafafa;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -moz-transform: scale 1, 0;
+    -o-transform: scale 1, 0;
+    -ms-transform: scale 1, 0;
+    -webkit-transform: scale 1, 0;
+    transform: scale 1, 0; }
+    /* line 83, ../shared/common.scss */
+    .aib-interactive .cta-block .email-box.expanded {
+      height: 64px;
+      padding: 10px;
+      margin-top: 30px;
+      -moz-transform: scale(1, 1);
+      -o-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+      transform: scale(1, 1); }
+      /* line 88, ../shared/common.scss */
+      .aib-interactive .cta-block .email-box.expanded #button-sendemail {
+        -moz-transform: scale(1, 1);
+        -o-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1); }
+      /* line 92, ../shared/common.scss */
+      .aib-interactive .cta-block .email-box.expanded #sendemail {
+        -moz-transform: scale(1, 1);
+        -o-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1); }
+    /* line 101, ../shared/common.scss */
+    .aib-interactive .cta-block .email-box .swipe-text {
+      display: none;
+      position: absolute;
+      bottom: 2px;
+      padding-left: 10px; }
+    /* line 108, ../shared/common.scss */
+    .aib-interactive .cta-block .email-box button {
+      padding: 5px !important;
+      font-size: 18px !important;
+      border: 2px solid #d43037 !important;
+      background-color: #d43037 !important;
+      color: #ffffff !important;
+      margin-left: 10px !important;
+      cursor: pointer !important; }
+    /* line 118, ../shared/common.scss */
+    .aib-interactive .cta-block .email-box input {
+      padding: 10px !important;
+      font-size: 18px !important;
+      width: 60%;
+      background-color: none !important; }
+      @media only screen and (max-width: 330px) {
+        /* line 118, ../shared/common.scss */
+        .aib-interactive .cta-block .email-box input {
+          width: 55%; } }
+      /* line 127, ../shared/common.scss */
+      .aib-interactive .cta-block .email-box input#button-sendemail {
+        width: 30%;
+        margin-left: 5%;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        -moz-transform: scale(1, 0);
+        -o-transform: scale(1, 0);
+        -ms-transform: scale(1, 0);
+        -webkit-transform: scale(1, 0);
+        transform: scale(1, 0); }
+        @media only screen and (max-width: 480px) {
+          /* line 127, ../shared/common.scss */
+          .aib-interactive .cta-block .email-box input#button-sendemail {
+            width: 25%; } }
+        @media only screen and (max-width: 330px) {
+          /* line 127, ../shared/common.scss */
+          .aib-interactive .cta-block .email-box input#button-sendemail {
+            width: 28%; } }
+      /* line 141, ../shared/common.scss */
+      .aib-interactive .cta-block .email-box input#sendemail {
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        -moz-transform: scale(1, 0);
+        -o-transform: scale(1, 0);
+        -ms-transform: scale(1, 0);
+        -webkit-transform: scale(1, 0);
+        transform: scale(1, 0); }
+      /* line 146, ../shared/common.scss */
+      .aib-interactive .cta-block .email-box input .farketo-incomplete {
+        background-color: pink; }
+    /* line 152, ../shared/common.scss */
+    .aib-interactive .cta-block .email-box input[type="button"] {
+      padding: 10px !important;
+      font-size: 18px !important;
+      border: 2px solid #d43037 !important;
+      background-color: #d43037 !important;
+      color: #ffffff !important;
+      margin-left: 10px !important;
+      cursor: pointer !important; }
+  /* line 164, ../shared/common.scss */
+  .aib-interactive .cta-block .email-status {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -moz-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -webkit-transform: scale(1, 0);
+    transform: scale(1, 0); }
+    /* line 168, ../shared/common.scss */
+    .aib-interactive .cta-block .email-status.expanded {
+      -moz-transform: scale(1, 1);
+      -o-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+      transform: scale(1, 1);
+      background: #fff;
+      height: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80%; }
+    /* line 178, ../shared/common.scss */
+    .aib-interactive .cta-block .email-status p {
+      text-align: center !important; }
+  /* line 184, ../shared/common.scss */
+  .aib-interactive #disclaimer-button {
+    cursor: pointer; }
+    /* line 187, ../shared/common.scss */
+    .aib-interactive #disclaimer-button h2 {
+      margin: 0 5px 0 0 !important;
+      color: #333 !important;
+      padding: 0 !important;
+      font-size: 18px !important;
+      font-weight: 100 !important;
+      display: inline !important; }
+    /* line 196, ../shared/common.scss */
+    .aib-interactive #disclaimer-button .arr {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out; }
+      /* line 203, ../shared/common.scss */
+      .aib-interactive #disclaimer-button .arr.open {
+        -moz-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg); }
+        /* line 206, ../shared/common.scss */
+        .aib-interactive #disclaimer-button .arr.open svg {
+          width: 15px !important;
+          height: 15px !important; }
+          /* line 210, ../shared/common.scss */
+          .aib-interactive #disclaimer-button .arr.open svg path {
+            fill: #000 !important; }
+  /* line 219, ../shared/common.scss */
+  .aib-interactive .terms-overlay {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    background: #ffffff;
+    padding-top: 10px;
+    margin-top: 10px;
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    max-height: 3000px; }
+    /* line 230, ../shared/common.scss */
+    .aib-interactive .terms-overlay.closed {
+      max-height: 0px; }
+  /* line 238, ../shared/common.scss */
+  .aib-interactive .clear {
+    clear: both; }
+
+/* line 14, ../feehelp/main.scss */
+.aib-interactive .calc-wrap .head-block {
+  background: #353537; }
+  /* line 18, ../feehelp/main.scss */
+  .aib-interactive .calc-wrap .head-block > div {
+    max-height: 200px; }
+  /* line 21, ../feehelp/main.scss */
+  .aib-interactive .calc-wrap .head-block .head-left {
+    width: 44%;
+    float: left;
+    padding: 3%; }
+    @media only screen and (max-width: 480px) {
+      /* line 21, ../feehelp/main.scss */
+      .aib-interactive .calc-wrap .head-block .head-left {
+        width: 100%; } }
+    /* line 30, ../feehelp/main.scss */
+    .aib-interactive .calc-wrap .head-block .head-left p {
+      color: #ffffff;
+      font-size: 20px; }
+    /* line 35, ../feehelp/main.scss */
+    .aib-interactive .calc-wrap .head-block .head-left input[type=text] {
+      font-size: 22px;
+      font-weight: 100;
+      font-family: "Ropa Sans", Helvetica, Arial, "Lucida Grande", sans-serif;
+      padding: 10px;
+      background: #ffffff;
+      width: 94%; }
+      @media only screen and (max-width: 480px) {
+        /* line 35, ../feehelp/main.scss */
+        .aib-interactive .calc-wrap .head-block .head-left input[type=text] {
+          width: 84%; } }
+  /* line 48, ../feehelp/main.scss */
+  .aib-interactive .calc-wrap .head-block .head-right {
+    width: 50%;
+    float: right;
+    overflow: hidden;
+    background-image: url(//www.aib.edu.au/custom/files/media/fee_help_heading.jpg);
+    height: 200px;
+    background-size: cover; }
+
+/* line 58, ../feehelp/main.scss */
+.aib-interactive .calc-wrap .under-arrow {
+  width: 100%;
+  height: 17px;
+  background-image: url(//www.aib.edu.au/custom/files/media/fee_help_top_arrow.png);
+  background-position: 50px -5px;
+  background-repeat: no-repeat; }
+
+/* line 67, ../feehelp/main.scss */
+.aib-interactive .pay-period {
+  background: #f4f4f4;
+  margin: 20px 0; }
+  @media only screen and (max-width: 480px) {
+    /* line 67, ../feehelp/main.scss */
+    .aib-interactive .pay-period {
+      padding: 10px;
+      text-align: center; } }
+  /* line 76, ../feehelp/main.scss */
+  .aib-interactive .pay-period h4 {
+    display: inline-block;
+    margin-left: 20px; }
+    @media only screen and (max-width: 480px) {
+      /* line 76, ../feehelp/main.scss */
+      .aib-interactive .pay-period h4 {
+        margin-left: 0px;
+        margin-top: 10px; } }
+  /* line 85, ../feehelp/main.scss */
+  .aib-interactive .pay-period #pay-period-select {
+    display: inline-block;
+    padding-left: 10px; }
+    /* line 89, ../feehelp/main.scss */
+    .aib-interactive .pay-period #pay-period-select .pay-period-button {
+      display: inline-block;
+      font-size: 18px;
+      border: 1px solid #999;
+      height: 40px;
+      line-height: 40px;
+      padding: 0px 10px;
+      background: #eee;
+      color: #bbb;
+      cursor: pointer; }
+      @media only screen and (max-width: 480px) {
+        /* line 89, ../feehelp/main.scss */
+        .aib-interactive .pay-period #pay-period-select .pay-period-button {
+          padding: 0px 6px; } }
+      /* line 104, ../feehelp/main.scss */
+      .aib-interactive .pay-period #pay-period-select .pay-period-button.selected {
+        color: #333; }
+
+/* line 112, ../feehelp/main.scss */
+.aib-interactive .calc-feehelp p {
+  margin: 5px 0 0;
+  font-size: 18px;
+  line-height: 22px; }
+
+/* line 118, ../feehelp/main.scss */
+.aib-interactive .calc-feehelp h3 {
+  font-weight: 100;
+  font-size: 36px;
+  color: #ffffff;
+  margin: 0;
+  padding: 0; }
+  @media only screen and (max-width: 480px) {
+    /* line 118, ../feehelp/main.scss */
+    .aib-interactive .calc-feehelp h3 {
+      font-size: 30px; } }
+  @media only screen and (max-width: 330px) {
+    /* line 118, ../feehelp/main.scss */
+    .aib-interactive .calc-feehelp h3 {
+      font-size: 26px; } }
+
+@media only screen and (max-width: 480px) {
+  /* line 132, ../feehelp/main.scss */
+  .aib-interactive .calc-feehelp > div {
+    min-height: 90px; } }
+
+/* line 139, ../feehelp/main.scss */
+.aib-interactive .calc-feehelp .calc-left {
+  width: 44%;
+  padding: 4% 3%;
+  float: left;
+  color: #ffffff;
+  background-color: #d43037; }
+
+/* line 150, ../feehelp/main.scss */
+.aib-interactive .calc-feehelp .calc-right {
+  width: 44%;
+  padding: 4% 3%;
+  float: right;
+  color: #fff;
+  background-color: #ba0e28; }
+
+/* line 163, ../feehelp/main.scss */
+.aib-interactive .calc-rates {
+  margin-top: 20px;
+  background-color: #eee; }
+  /* line 167, ../feehelp/main.scss */
+  .aib-interactive .calc-rates p {
+    margin: 5px 0 0;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000; }
+  /* line 174, ../feehelp/main.scss */
+  .aib-interactive .calc-rates h3 {
+    font-weight: 100;
+    font-size: 36px;
+    margin: 0;
+    padding: 0;
+    color: #d43037; }
+  /* line 181, ../feehelp/main.scss */
+  .aib-interactive .calc-rates .calc-left {
+    width: 44%;
+    padding: 3%;
+    float: left;
+    color: #ffffff;
+    background-color: #eee; }
+    @media only screen and (max-width: 480px) {
+      /* line 181, ../feehelp/main.scss */
+      .aib-interactive .calc-rates .calc-left {
+        width: 94%;
+        text-align: center; } }
+  /* line 196, ../feehelp/main.scss */
+  .aib-interactive .calc-rates .calc-right {
+    width: 44%;
+    padding: 3%;
+    float: right;
+    color: #ffffff;
+    background-color: #e2e2e2; }
+    @media only screen and (max-width: 480px) {
+      /* line 196, ../feehelp/main.scss */
+      .aib-interactive .calc-rates .calc-right {
+        width: 94%;
+        margin-top: 10px;
+        text-align: center; } }
+
+/* line 214, ../feehelp/main.scss */
+.aib-interactive .calc-totals {
+  margin-top: 20px;
+  background-color: #eee; }
+  /* line 219, ../feehelp/main.scss */
+  .aib-interactive .calc-totals p {
+    margin: 5px 0 0;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000; }
+  /* line 229, ../feehelp/main.scss */
+  .aib-interactive .calc-totals .calc-left {
+    width: 44%;
+    padding: 3%;
+    float: left;
+    color: #ffffff;
+    background-color: #f4f4f4; }
+    @media only screen and (max-width: 480px) {
+      /* line 229, ../feehelp/main.scss */
+      .aib-interactive .calc-totals .calc-left {
+        width: 94%;
+        text-align: center; } }
+    /* line 240, ../feehelp/main.scss */
+    .aib-interactive .calc-totals .calc-left h3 {
+      color: #333;
+      font-size: 36px;
+      font-weight: 100;
+      margin: 0;
+      padding: 0; }
+  /* line 248, ../feehelp/main.scss */
+  .aib-interactive .calc-totals .calc-right {
+    width: 44%;
+    padding: 3%;
+    float: right;
+    color: #ffffff;
+    background-color: #e2e2e2; }
+    @media only screen and (max-width: 480px) {
+      /* line 248, ../feehelp/main.scss */
+      .aib-interactive .calc-totals .calc-right {
+        width: 94%;
+        text-align: center; } }
+    /* line 259, ../feehelp/main.scss */
+    .aib-interactive .calc-totals .calc-right h3 {
+      color: #333;
+      font-weight: 100;
+      font-size: 36px;
+      margin: 0;
+      padding: 0; }
+
+/* line 268, ../feehelp/main.scss */
+.aib-interactive .clear {
+  clear: both; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,328 @@
+/* 
+ * Javascript for the user favourites functionality.
+ * 
+ */
+
+//add everything to a fav's js object.
+var fav = {};
+
+//has the control contents been loaded.
+//only supports on control on a page atm.
+fav.isLoaded = false;
+
+fav.groups = [];
+fav.linksThesaurusId = -1;
+
+function reloadFavouriteType(fav, type) {
+  if (type === '2') {
+    fav.loadPages();
+  }
+  else if (type === '4') {
+    fav.loadFiles();
+  }
+  else if (type === '5') {
+    fav.loadEvents();
+  }
+  else if (type === '1') {
+    fav.loadChats();
+  }
+  else if(type === '3') {
+    fav.loadLinks();
+  }
+  else if(type === '6') {
+    fav.loadThesaurusLinks();
+  }
+  else if(type === '7') {
+	fav.loadSubscriptionLinks();
+  }
+}
+
+//add an item to the users favourites.
+//currently only used for pages in java atm.
+fav.add = function(res, type) {
+  jQuery.ajax({
+      url: "/servlet/favourites",
+      dataType: 'json',
+      cache: false,
+      contentType: "application/x-www-form-urlencoded",
+      data: {fresId: res, frType: type, faction: "add"},
+      success: function(data) {
+        if (data.success) {
+          reloadFavouriteType(fav, type);
+        }
+        
+        //alert(data.message);
+      }
+    });
+};
+
+fav.remove = function(res, type) {
+  jQuery.ajax({
+      url: "/servlet/favourites",
+      dataType: 'json',
+      cache: false,
+      contentType: "application/x-www-form-urlencoded",
+      data: {fresId: res, frType: type, faction: "remove"},
+      success: function(data) {
+        if (data.success) {
+          reloadFavouriteType(fav, type);
+        } else {
+          //alert(data.message);
+        }
+      }
+    });
+};
+fav.loadPages = function() {
+  jQuery("#favourite-pages-list").load("/servlet/favourites", {faction: "render", frType: 2, "rpp" : pages_favourites_rpp });
+};
+fav.loadFiles = function() {
+  jQuery("#favourite-files-list").load("/servlet/favourites", {faction: "render", frType: 4, "rpp" : files_favourites_rpp });
+};
+fav.loadEvents = function() {
+  jQuery("#favourite-events-list").load("/servlet/favourites", {faction: "render", frType: 5, "rpp" : events_favourites_rpp });
+};
+fav.loadChats = function() {
+  jQuery("#favourite-chats-list").load("/servlet/favourites", {faction: "render", frType: 1, "rpp" : chats_favourites_rpp });
+};
+fav.loadLinks = function() {
+  jQuery("#favourite-links-list").load("/servlet/favourites", {faction: "render", frType: 3, "rpp" : links_favourites_rpp });
+};
+fav.loadThesaurusLinks = function() {
+  jQuery("#favourite-thesauruslinks-list").load("/servlet/favourites", {faction: "render", frType: 6, thesaurus_id: favourites_thes_id, "rpp" : favourites_rpp, type: "list", thesaurus_pageid: favourites_thes_pageid });
+  jQuery("#favourite-thesauruslinks-options").load("/servlet/favourites", {faction: "render", frType: 6, thesaurus_id: favourites_thes_id, type: "options" });
+};
+fav.loadSubscriptionLinks = function() {
+  jQuery("#favourite-subscriptions-list").load("/servlet/favourites", {faction: "render", frType: 7, "rpp" : subscriptions_rpp });
+};
+fav.load = function() {
+  if (fav.isLoaded) {
+    return;
+  }
+  for (var i = 0; i < fav.groups.length; i++) {
+    if (fav.groups[i] === "2") {
+      fav.loadPages();
+    }
+    if (fav.groups[i] === "4") {
+      fav.loadFiles();
+    }
+    if (fav.groups[i] === "5") {
+      fav.loadEvents();
+    }
+    if (fav.groups[i] === "1") {
+      fav.loadChats();
+    }
+    if (fav.groups[i] === "3") {
+      fav.loadLinks();
+    }
+    if (fav.groups[i] === "6") {
+      fav.loadThesaurusLinks();
+    }
+    if (fav.groups[i] === "7") {
+      fav.loadSubscriptionLinks();
+    }
+    
+  }
+  fav.isLoaded = true;
+};
+fav.addLinkRow = function(id, title, url, desc) {
+  var row = "<tr>" +
+    "<td class='identifier hidden' style='display:none;'>" + id + "</td>" +
+    "<td class='title'>" + title + "</td>" +
+    "<td class='url'>" + url + "</td>" +
+    "<td class='description'>" + desc + "</td>" +
+    "</tr>";
+  return row;
+};
+fav.clearLinkInputs = function() {
+  jQuery("#edit-fav-links table input[name='linktitle']").val("");
+  jQuery("#edit-fav-links table input[name='linkurl']").val("");
+  jQuery("#edit-fav-links table input[name='linkdesc']").val("");
+};
+fav.addLink = function(title, url, desc) {
+  jQuery('#link-add-button').prop("disabled", true);
+  jQuery('#link-add-button').attr('value','Adding');
+  if(!url.match("http"))
+  {
+    url = "http://" + url;
+  }
+  jQuery.ajax({
+      url: "/servlet/favourites",
+      dataType: 'json',
+      data: {faction: "addLink", flinktitle: title, flinkurl: url, flinkdesc: desc},
+      success: function(data) {
+        if (data.success) {
+          //jQuery("#edit-fav-links table tbody").append(fav.addLinkRow(data.result, title, url, desc));
+          //fav.clearLinkInputs();
+          top.fav.loadLinks();
+          jQuery('#link-add-button').prop("disabled", false);
+          fav.clearLinkInputs();
+          location.reload();
+        }
+      }
+    });
+};
+fav.removeLink = function(button) {
+   jQuery(button).prop("disabled", true);
+   jQuery(button).val('Deleting');
+   var id = jQuery(button).attr("id");
+   jQuery.ajax({
+      url: "/servlet/favourites",
+      dataType: 'json',
+      data: {faction: "removelink", flinkid: id},
+      success: function(data) {
+        if (data.success) {
+          top.fav.loadLinks();
+          location.reload();
+        } else {
+          alert(data.message);
+        }
+      }
+    });
+};
+/*~~~~~~~~~~~~ START Favourites Generation Links ~~~~~~~~~~~~~~~~~~~~~~~~~*/
+function generateAddFavouriteLink(resId, type) {
+  var link = "<span class='add_favourite favourite' >" +
+             "<a href=''>Add to Favourites</a>" +
+             generateFavouriteLink(resId, type) +
+             "</span>";
+  
+  return link;
+}
+
+function generateRemoveFavouriteLink(resId, type) {
+  var link = "<span class='remove_favourite favourite' >" +
+             "<a href=''>Remove from Favourites</a>" +
+             generateFavouriteLink(resId, type) +
+             "</span>";
+  
+  return link;
+}
+
+function generateFavouriteLink(resId, type) {
+  var link = "<input type='hidden' name='frType' value='" + type + "' />" +
+             "<input type='hidden' name='fresId' value='" + resId + "' />";
+  
+  return link;
+}
+
+
+function addFavouriteLinkScript() {
+  jQuery(".add_favourite").unbind();
+  jQuery(".add_favourite").click(function(e) {
+    e.preventDefault();
+    var type = jQuery(this).children("input[name='frType']").val();
+    var res = jQuery(this).children("input[name='fresId']").val();
+    fav.add(res, type);
+    
+    jQuery(this).replaceWith(generateRemoveFavouriteLink(res, type));
+    
+    removeFavouriteLinkScript();
+  });
+}
+
+function removeFavouriteLinkScript() {
+  jQuery(".remove_favourite").unbind();
+  jQuery(".remove_favourite").click(function(e) {
+    e.preventDefault();
+    var type = jQuery(this).children("input[name='frType']").val();
+    var res = jQuery(this).children("input[name='fresId']").val();
+    fav.remove(res, type);
+    
+    jQuery(this).replaceWith(generateAddFavouriteLink(res, type));
+    
+    addFavouriteLinkScript();
+  });
+}
+
+/*~~~~~~~~~~~~ END Favourites Generation Links ~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~ START Subscription Generation Links ~~~~~~~~~~~~~~~~~~~~~~~~~*/
+function generateAddSubscriptionLink(resId, type) {
+  var link = "<span class='add_subscription subscription' >" +
+             "<a href=''>Add to Subscriptions</a>" +
+             generateSubscriptionLink(resId, type) +
+             "</span>";
+  
+  return link;
+}
+
+function generateRemoveSubscriptionLink(resId, type) {
+  var link = "<span class='remove_subscription subscription' >" +
+             "<a href=''>Remove from Subscriptions</a>" +
+             generateSubscriptionLink(resId, type) +
+             "</span>";
+  
+  return link;
+}
+
+function generateSubscriptionLink(resId, type) {
+  var link = "<input type='hidden' name='frType' value='" + type + "' />" +
+             "<input type='hidden' name='fresId' value='" + resId + "' />";
+  
+  return link;
+}
+
+function addSubscriptionLinkScript() {
+  jQuery(".add_subscription").unbind();
+  jQuery(".add_subscription").click(function(e) {
+    e.preventDefault();
+    var type = jQuery(this).children("input[name='frType']").val();
+    var res = jQuery(this).children("input[name='fresId']").val();
+    fav.add(res, type);
+    
+    jQuery(this).replaceWith(generateRemoveSubscriptionLink(res, type));
+    
+    removeSubscriptionLinkScript();
+  });
+}
+
+function removeSubscriptionLinkScript() {
+  jQuery(".remove_subscription").unbind();
+  jQuery(".remove_subscription").click(function(e) {
+    e.preventDefault();
+    var type = jQuery(this).children("input[name='frType']").val();
+    var res = jQuery(this).children("input[name='fresId']").val();
+    fav.remove(res, type);
+    
+    jQuery(this).replaceWith(generateAddSubscriptionLink(res, type));
+    
+    addSubscriptionLinkScript();
+  });
+}
+	
+/*~~~~~~~~~~~~ END Subscription Generation Links ~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+
+//the favourites link.
+jQuery(document).ready(function() {
+  addFavouriteLinkScript();
+  removeFavouriteLinkScript();
+  
+  addSubscriptionLinkScript();
+  removeSubscriptionLinkScript();
+});
+
+//display/hide the favourites panel
+jQuery(document).ready(function() {
+  jQuery('#favourites_button').click(function(e) {
+    e.preventDefault();
+    jQuery("#favourites").toggle();
+    
+    if (jQuery('#breadcrumbs_favourite').hasClass('expand')) {
+      jQuery('#breadcrumbs_favourite').removeClass('expand');
+    }
+    else {
+      jQuery('#breadcrumbs_favourite').addClass('expand');
+    }
+  });
+  jQuery('#fav-thesauruslinks-edit').click(function(e) {
+    e.preventDefault();
+    jQuery("#favourite-thesauruslinks-options").slideToggle("fast");
+    if(jQuery('#fav-thesauruslinks-edit').hasClass("shown")) {
+      jQuery('#fav-thesauruslinks-edit').removeClass("shown");
+    } else {
+      jQuery('#fav-thesauruslinks-edit').addClass("shown");
+    }
+  });
+});

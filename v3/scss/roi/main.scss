@@ -1,0 +1,321 @@
+/***
+*
+* Master styles for ROI calculator 
+*
+***/  
+ 
+
+@import "../shared/common.scss"; 
+
+ 
+.aib-interactive{  
+    
+    @include respond-to(wide-screens){
+        tbody, td, td{
+             display:table-cell;
+        }
+    }
+    
+    .screen-container{
+        .screen-pad{
+            
+            padding: 0 0 20px;
+            
+            p{
+                margin-top: 0;
+            }
+            
+            h1{
+               border-bottom: 1px solid #ccc; 
+            }
+            
+            h2{
+               @include margpad(0);
+                font-size: 32px;
+                display: inline;
+            }
+            
+            h3{
+                margin: 20px 0 5px 0;
+                font-size: 18px;
+            }
+            
+            h4{
+                @include margpad(0);
+                display: inline ;
+                color: $_BLACK;
+            }
+            
+            .clear{
+                clear:both;
+            }
+            
+            @include respond-to(iphone-portrait){
+                p{
+                   line-height: 20px;  
+                }
+                
+                h4{
+                  display: block;  
+                }
+            }
+            
+            @include respond-to(iphone-landscape){
+                margin-top: -10px;
+                padding-top: 0;
+            }
+
+            .calc-wrap{
+                
+                .clear{
+                    clear:both;
+                }
+
+                .left-column{
+                    
+                    @include respond-to(small-screen){
+                        width: 100%; 
+                    }
+                    
+                    width: 49%;
+                    float: left;                    
+                    
+                    .selectors{
+                        width: 100%;
+                        background: #333;
+                        float: left;
+                        padding: 20px 0;
+                        
+                        .selecta{
+                            width: 80%;
+                            margin-top: 16px;
+                            margin-left: 10%;
+                            
+                            @include respond-to(small-screen){
+                                height: auto; 
+                            }
+                            
+                            @include respond-to(iphone-portrait){
+                                 height: auto; 
+                            }
+                            
+                            p{
+                                 color: #fff;    
+                            }
+
+                            select{
+                                z-index: 1;
+                                font-size: 16px;
+                                padding: 7px;
+                                margin: 0;
+                                width: 100%;
+                                background-color: $_WHITE;
+                                font-family: "Ropa Sans", sans-serif;
+                                
+                                option{
+                                }
+                            }
+                            
+                            input{
+                                width:100%; 
+                                font-size: 16px;
+                                padding: 7px;
+                                margin: 0;
+                                width: 100%;
+                                background-color: $_WHITE;
+                                font-family: "Ropa Sans", sans-serif;
+                            }
+                        }
+                        
+                        .roi-summary{
+                            padding: .1px 20px 20px;
+                            color: #fff;
+                            width: 73%;
+                            margin-left: 10%;
+                            background: #d43037;
+                            margin-bottom: 20px;
+                            margin-top: 20px;
+                            
+                            h4{
+                                display: block;
+                            }
+                            
+                            h2,h3,h4,h5,h6{
+                                color:$_WHITE;
+                            }
+                        }
+                    }                    
+                  
+                }
+
+                .right-column{
+                    
+                    @include respond-to(small-screen){
+                        width: 100%; 
+                        margin-top: 20px;
+                    }
+                    
+                    @include respond-to(iphone-landscape){
+                         width: 100%; 
+                    }
+                    
+                    width: 49%;
+                    float: right;    
+                    
+                    .chart-wrap{
+                        
+                        width: 94%;
+                        border: 1px solid #333;
+                        padding: 15px;
+                        
+                        #roi-chart{
+                            width: 98%;
+                            height: 340px;
+                        }
+                    }
+
+                    .result{
+
+                        float: right;
+                        width: 100%;
+                        margin-top: 20px;
+                        @include transition(all .5s ease-in-out);     
+
+                        .table-wrap{
+                            border: 1px solid #333;
+                            padding: 10px;
+
+                            table{
+
+                                tr{
+                                    th{
+
+                                    }
+
+                                    td{
+                                        span{
+
+                                        }
+
+                                        &.totalBar{
+
+                                        } 
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .notes{
+                    margin-top:20px;
+                }
+
+
+                .under-arrow{
+                    width: 100%;
+                    height: 17px;
+                    background-image: url(//www.aib.edu.au/custom/files/media/fee_help_top_arrow.png);
+                    background-position: 50px -5px;
+                    background-repeat: no-repeat
+                }        
+            }
+
+            .c3-axis{
+                &.c3-axis-x{
+                    path{
+                        &.domain{
+                            stroke-width: 1px;
+                            transform: scaleY(.1)
+                        }
+                    }
+                }
+
+                 &.c3-axis-y{
+                    path{
+                        &.domain{
+                            stroke-width: 1px;
+                            transform: scaleX(.1)
+                        }
+                    }
+                }
+            }
+
+            .c3-shapes-FEE-help{
+                path{
+                    &.c3-bar{
+                        stroke-width: 0;
+                    }
+                }
+            }
+
+            .c3-chart-lines{
+                .c3-chart-line{
+                    g{
+                        line{
+                             fill: none !important;
+                        }
+                        path{
+                             fill: none !important;
+                        }
+                    }
+                }
+            }
+
+            .c3-tooltip-container{
+
+                background: rgba(22, 22, 22, .5) !important;
+                padding: 5px !important;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, .4) !important;
+                min-width: 175px !important;
+
+                p{
+                    margin-bottom: 0 !important;
+                    margin-left: 5px !important;
+                    color: $_WHITE !important;
+                }
+
+                h4{
+                    color: $_WHITE !important;
+                    width: 100% !important;
+                    display: block !important;
+                    float: left !important;
+                    text-indent: 5px !important;
+                }
+            }
+        }        
+    }  
+    
+    .terms-overlay {
+          .mba-bonus{
+            width: 99%;
+            margin-left: 0;
+
+            table{
+                width: 100%;
+                padding: 0;
+                max-width:640px; 
+                margin-bottom:10px; 
+                border:1px solid $_BLACK;
+                border-collapse: unset;
+
+                tr{
+                    th{
+                        margin: 0;
+                        padding: 5px;
+                        text-align:center;
+                        background: $_BLACK;
+                        color: $_WHITE;
+                    }
+
+                    td{
+                        text-align: center;
+                        margin: 0;
+                        padding: 5px;
+                    }
+                }
+            }
+        }
+    }
+    
+}

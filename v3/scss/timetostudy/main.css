@@ -1,0 +1,1112 @@
+/***
+*
+* Master styles for Study Time Help calculator 
+*
+***/
+/***
+*
+
+Common styles for AIB interactive tools 
+
+*
+***/
+/***
+*
+
+** AIB Interactive Tool color pallette
+
+*
+***/
+/***
+*
+
+* AIB Interactive tools mixins
+
+*
+***/
+/***
+*
+* transitions 
+*
+***/
+/***
+*
+* margin + padding 
+*
+***/
+/***
+*
+* transforms 
+*
+***/
+/***
+*
+* rotate 
+*
+***/
+/***
+*
+* gradients 
+*
+***/
+/* line 14, ../shared/common.scss */
+.aib-interactive {
+  font-family: "Ropa Sans", Helvetica, Arial, "Lucida Grande", sans-serif; }
+  /* line 16, ../shared/common.scss */
+  .aib-interactive h1, .aib-interactive h2, .aib-interactive h3, .aib-interactive h4, .aib-interactive h5, .aib-interactive h6 {
+    color: #333;
+    margin: 0;
+    padding: 0; }
+  /* line 25, ../shared/common.scss */
+  .aib-interactive .cta-block .cta-box {
+    width: 100%;
+    min-height: 50px;
+    float: left;
+    text-align: center; }
+    /* line 35, ../shared/common.scss */
+    .aib-interactive .cta-block .cta-box a {
+      color: #666 !important; }
+    /* line 39, ../shared/common.scss */
+    .aib-interactive .cta-block .cta-box h3 {
+      margin: 0 0 10px !important;
+      padding: 0 !important; }
+    /* line 44, ../shared/common.scss */
+    .aib-interactive .cta-block .cta-box h4 {
+      margin: 0 0 10px !important;
+      padding: 0  !important; }
+    /* line 49, ../shared/common.scss */
+    .aib-interactive .cta-block .cta-box .cta-button {
+      width: 40%;
+      margin-left: 30%;
+      margin-top: 25px;
+      padding: 1px;
+      cursor: pointer;
+      background-color: #d43037; }
+      @media only screen and (max-width: 480px) {
+        /* line 49, ../shared/common.scss */
+        .aib-interactive .cta-block .cta-box .cta-button {
+          width: 100%;
+          margin-left: 0; } }
+      /* line 63, ../shared/common.scss */
+      .aib-interactive .cta-block .cta-box .cta-button p {
+        font-size: 18px !important;
+        font-weight: 100 !important;
+        color: #ffffff !important;
+        line-height: 20px !important;
+        margin: 20px 10px !important; }
+  /* line 73, ../shared/common.scss */
+  .aib-interactive .cta-block .email-box {
+    margin: 10px 0;
+    padding: 0;
+    height: 0;
+    background: #fafafa;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -moz-transform: scale 1, 0;
+    -o-transform: scale 1, 0;
+    -ms-transform: scale 1, 0;
+    -webkit-transform: scale 1, 0;
+    transform: scale 1, 0; }
+    /* line 83, ../shared/common.scss */
+    .aib-interactive .cta-block .email-box.expanded {
+      height: 64px;
+      padding: 10px;
+      margin-top: 30px;
+      -moz-transform: scale(1, 1);
+      -o-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+      transform: scale(1, 1); }
+      /* line 88, ../shared/common.scss */
+      .aib-interactive .cta-block .email-box.expanded #button-sendemail {
+        -moz-transform: scale(1, 1);
+        -o-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1); }
+      /* line 92, ../shared/common.scss */
+      .aib-interactive .cta-block .email-box.expanded #sendemail {
+        -moz-transform: scale(1, 1);
+        -o-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1); }
+    /* line 101, ../shared/common.scss */
+    .aib-interactive .cta-block .email-box .swipe-text {
+      display: none;
+      position: absolute;
+      bottom: 2px;
+      padding-left: 10px; }
+    /* line 108, ../shared/common.scss */
+    .aib-interactive .cta-block .email-box button {
+      padding: 5px !important;
+      font-size: 18px !important;
+      border: 2px solid #d43037 !important;
+      background-color: #d43037 !important;
+      color: #ffffff !important;
+      margin-left: 10px !important;
+      cursor: pointer !important; }
+    /* line 118, ../shared/common.scss */
+    .aib-interactive .cta-block .email-box input {
+      padding: 10px !important;
+      font-size: 18px !important;
+      width: 60%;
+      background-color: none !important; }
+      @media only screen and (max-width: 330px) {
+        /* line 118, ../shared/common.scss */
+        .aib-interactive .cta-block .email-box input {
+          width: 55%; } }
+      /* line 127, ../shared/common.scss */
+      .aib-interactive .cta-block .email-box input#button-sendemail {
+        width: 30%;
+        margin-left: 5%;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        -moz-transform: scale(1, 0);
+        -o-transform: scale(1, 0);
+        -ms-transform: scale(1, 0);
+        -webkit-transform: scale(1, 0);
+        transform: scale(1, 0); }
+        @media only screen and (max-width: 480px) {
+          /* line 127, ../shared/common.scss */
+          .aib-interactive .cta-block .email-box input#button-sendemail {
+            width: 25%; } }
+        @media only screen and (max-width: 330px) {
+          /* line 127, ../shared/common.scss */
+          .aib-interactive .cta-block .email-box input#button-sendemail {
+            width: 28%; } }
+      /* line 141, ../shared/common.scss */
+      .aib-interactive .cta-block .email-box input#sendemail {
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        -moz-transform: scale(1, 0);
+        -o-transform: scale(1, 0);
+        -ms-transform: scale(1, 0);
+        -webkit-transform: scale(1, 0);
+        transform: scale(1, 0); }
+      /* line 146, ../shared/common.scss */
+      .aib-interactive .cta-block .email-box input .farketo-incomplete {
+        background-color: pink; }
+    /* line 152, ../shared/common.scss */
+    .aib-interactive .cta-block .email-box input[type="button"] {
+      padding: 10px !important;
+      font-size: 18px !important;
+      border: 2px solid #d43037 !important;
+      background-color: #d43037 !important;
+      color: #ffffff !important;
+      margin-left: 10px !important;
+      cursor: pointer !important; }
+  /* line 164, ../shared/common.scss */
+  .aib-interactive .cta-block .email-status {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -moz-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -webkit-transform: scale(1, 0);
+    transform: scale(1, 0); }
+    /* line 168, ../shared/common.scss */
+    .aib-interactive .cta-block .email-status.expanded {
+      -moz-transform: scale(1, 1);
+      -o-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+      transform: scale(1, 1);
+      background: #fff;
+      height: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80%; }
+    /* line 178, ../shared/common.scss */
+    .aib-interactive .cta-block .email-status p {
+      text-align: center !important; }
+  /* line 184, ../shared/common.scss */
+  .aib-interactive #disclaimer-button {
+    cursor: pointer; }
+    /* line 187, ../shared/common.scss */
+    .aib-interactive #disclaimer-button h2 {
+      margin: 0 5px 0 0 !important;
+      color: #333 !important;
+      padding: 0 !important;
+      font-size: 18px !important;
+      font-weight: 100 !important;
+      display: inline !important; }
+    /* line 196, ../shared/common.scss */
+    .aib-interactive #disclaimer-button .arr {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out; }
+      /* line 203, ../shared/common.scss */
+      .aib-interactive #disclaimer-button .arr.open {
+        -moz-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg); }
+        /* line 206, ../shared/common.scss */
+        .aib-interactive #disclaimer-button .arr.open svg {
+          width: 15px !important;
+          height: 15px !important; }
+          /* line 210, ../shared/common.scss */
+          .aib-interactive #disclaimer-button .arr.open svg path {
+            fill: #000 !important; }
+  /* line 219, ../shared/common.scss */
+  .aib-interactive .terms-overlay {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    background: #ffffff;
+    padding-top: 10px;
+    margin-top: 10px;
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    max-height: 3000px; }
+    /* line 230, ../shared/common.scss */
+    .aib-interactive .terms-overlay.closed {
+      max-height: 0px; }
+  /* line 238, ../shared/common.scss */
+  .aib-interactive .clear {
+    clear: both; }
+
+/* line 11, ../timetostudy/main.scss */
+.aib-interactive {
+  overflow: hidden;
+  /* Overides for CTA box / email */ }
+  /* line 15, ../timetostudy/main.scss */
+  .aib-interactive .calc-wrap {
+    background: #ffffff; }
+    /* line 19, ../timetostudy/main.scss */
+    .aib-interactive .calc-wrap .study-time-wrap {
+      width: 100%;
+      margin-top: 10px;
+      display: flex;
+      position: relative;
+      background-color: #1d8b2c;
+      align-items: center; }
+      @media only screen and (max-width: 640px) {
+        /* line 19, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .study-time-wrap {
+          width: 80% !important;
+          top: -120px;
+          left: 0;
+          height: 100px;
+          z-index: 9998;
+          position: fixed;
+          -webkit-transition: top 0.5s ease-in-out;
+          -moz-transition: top 0.5s ease-in-out;
+          -ms-transition: top 0.5s ease-in-out;
+          -o-transition: top 0.5s ease-in-out;
+          transition: top 0.5s ease-in-out; }
+          /* line 38, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .study-time-wrap.shown {
+            /* position:fixed; */
+            top: 100px; } }
+      /* line 46, ../timetostudy/main.scss */
+      .aib-interactive .calc-wrap .study-time-wrap .study-text {
+        width: 50%;
+        background-color: #39b54a;
+        display: flex; }
+        @media only screen and (max-width: 640px) {
+          /* line 46, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .study-time-wrap .study-text {
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            top: 0px;
+            bottom: 70px; } }
+        /* line 60, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .study-time-wrap .study-text.warning {
+          background-color: #d43037; }
+        /* line 64, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .study-time-wrap .study-text.amber {
+          background-color: #d66000; }
+        /* line 68, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .study-time-wrap .study-text h4 {
+          font-family: "Ropa Sans", Helvetica, Arial, "Lucida Grande", sans-serif;
+          color: #ffffff;
+          line-height: 24px;
+          margin: 30px 20px;
+          padding: 0;
+          font-size: 20px;
+          font-weight: 200; }
+          @media only screen and (max-width: 640px) {
+            /* line 68, ../timetostudy/main.scss */
+            .aib-interactive .calc-wrap .study-time-wrap .study-text h4 {
+              line-height: 14px;
+              font-size: 18px;
+              margin: 7px 10px; } }
+          @media only screen and (max-width: 480px) {
+            /* line 68, ../timetostudy/main.scss */
+            .aib-interactive .calc-wrap .study-time-wrap .study-text h4 {
+              line-height: 20px;
+              font-size: 18px; } }
+      /* line 90, ../timetostudy/main.scss */
+      .aib-interactive .calc-wrap .study-time-wrap .study-hours {
+        width: 50%;
+        background-color: #1d8b2c;
+        display: flex; }
+        @media only screen and (max-width: 640px) {
+          /* line 90, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .study-time-wrap .study-hours {
+            /* top: 30px; */
+            position: absolute;
+            width: 50%;
+            /* height:70px; */ } }
+        /* line 103, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .study-time-wrap .study-hours.warning {
+          background-color: #ba0e28; }
+        /* line 107, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .study-time-wrap .study-hours.amber {
+          background-color: #eb7400; }
+        /* line 111, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .study-time-wrap .study-hours #studyhours {
+          color: #ffffff;
+          font-size: 2.5em;
+          line-height: 1em;
+          width: 90%;
+          text-align: right;
+          margin-top: 7px; }
+          @media only screen and (max-width: 640px) {
+            /* line 111, ../timetostudy/main.scss */
+            .aib-interactive .calc-wrap .study-time-wrap .study-hours #studyhours {
+              margin-top: 0px; } }
+          @media only screen and (max-width: 480px) {
+            /* line 111, ../timetostudy/main.scss */
+            .aib-interactive .calc-wrap .study-time-wrap .study-hours #studyhours {
+              text-align: left;
+              margin-left: 10px;
+              font-size: 2em; } }
+        /* line 130, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .study-time-wrap .study-hours .study-tick {
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          right: -10px;
+          top: -14px;
+          border: 3px solid #1d8b2c;
+          background: #ffffff;
+          border-radius: 22px; }
+          /* line 141, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .study-time-wrap .study-hours .study-tick.warning {
+            border: 3px solid #ba0e28; }
+          /* line 145, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .study-time-wrap .study-hours .study-tick.amber {
+            border: 3px solid #d66000; }
+          /* line 149, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .study-time-wrap .study-hours .study-tick img {
+            margin: 6px;
+            width: 70%; }
+      /* line 156, ../timetostudy/main.scss */
+      .aib-interactive .calc-wrap .study-time-wrap .study-bar-wrap {
+        display: none;
+        position: absolute;
+        bottom: 5px;
+        background: #040;
+        margin: 10px;
+        width: 90%;
+        overflow: hidden; }
+        @media only screen and (max-width: 640px) {
+          /* line 156, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .study-time-wrap .study-bar-wrap {
+            display: block;
+            bottom: auto;
+            top: 70px; } }
+        /* line 172, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .study-time-wrap .study-bar-wrap.amber {
+          background-color: #d07000; }
+        /* line 176, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .study-time-wrap .study-bar-wrap.warning {
+          /* background-color: $_SLIDER_RED_TRACK; */
+          background: #a00000; }
+        /* line 185, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .study-time-wrap .study-bar-wrap #study-bar {
+          height: 5px;
+          width: 5%;
+          background-color: #ffffff;
+          -webkit-transition: "width .5s ease-in-out";
+          -moz-transition: "width .5s ease-in-out";
+          -ms-transition: "width .5s ease-in-out";
+          -o-transition: "width .5s ease-in-out";
+          transition: "width .5s ease-in-out"; }
+      /* line 193, ../timetostudy/main.scss */
+      .aib-interactive .calc-wrap .study-time-wrap.amber {
+        background-color: #eb7400; }
+      /* line 197, ../timetostudy/main.scss */
+      .aib-interactive .calc-wrap .study-time-wrap.warning {
+        background-color: #ba0e28; }
+    /* line 208, ../timetostudy/main.scss */
+    .aib-interactive .calc-wrap .selectors {
+      width: 100%; }
+      /* line 211, ../timetostudy/main.scss */
+      .aib-interactive .calc-wrap .selectors .selecta {
+        position: relative;
+        width: 47%;
+        float: left;
+        padding: 20px 1% 80px;
+        background-color: #ececec;
+        margin-bottom: 2%;
+        min-height: 160px; }
+        @media only screen and (min-width: 1025px) and (max-width: 1200px) {
+          /* line 211, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta {
+            min-height: 200px; } }
+        @media only screen and (max-width: 640px) {
+          /* line 211, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta {
+            width: 100%;
+            min-height: 0; } }
+        @media only screen and (max-width: 480px) {
+          /* line 211, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta {
+            padding: 20px 0 80px; } }
+        /* line 238, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .selectors .selecta .clock {
+          width: 40px;
+          height: 40px;
+          background-size: 133%;
+          position: absolute;
+          top: 10px; }
+          /* line 246, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta .clock.work {
+            background-position: center -165px; }
+          /* line 250, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta .clock.weekend {
+            background-position: center -115px; }
+          /* line 254, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta .clock.morning {
+            background-position: center 10px; }
+          /* line 258, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta .clock.evening {
+            background-position: center -30px; }
+          /* line 262, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta .clock.commute {
+            background-position: center -70px; }
+        /* line 268, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .selectors .selecta p {
+          margin: 0 40px 0 60px; }
+        /* line 272, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .selectors .selecta .hidden-slider {
+          position: absolute;
+          width: 69%;
+          bottom: 50px;
+          display: none; }
+          /* line 279, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta .hidden-slider.shown {
+            display: block; }
+          /* line 284, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta .hidden-slider.warning .slider-track {
+            border: 5px solid #ba0e28; }
+          /* line 288, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta .hidden-slider.warning .slider-knob {
+            border: 16px solid #c00; }
+          /* line 294, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta .hidden-slider.amber .slider-track {
+            border: 5px solid #d66000; }
+          /* line 298, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta .hidden-slider.amber .slider-knob {
+            border: 16px solid #eb7400; }
+          /* line 303, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta .hidden-slider .slider-track {
+            border: 5px solid #090;
+            border-radius: 10px; }
+          /* line 307, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta .hidden-slider .slider-knob {
+            position: absolute;
+            border: 16px solid #0c0;
+            border-radius: 20px;
+            bottom: -10px; }
+          /* line 313, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta .hidden-slider .slider-value {
+            position: absolute;
+            right: -27%;
+            font-size: 36px;
+            font-weight: bold;
+            bottom: -15px; }
+        /* line 322, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .selectors .selecta .info-button {
+          display: none;
+          width: 40px;
+          height: 40px;
+          background-image: url(http://www.aib.edu.au/custom/files/media/life_fit_icons.png);
+          background-size: 175%;
+          background-repeat: no-repeat;
+          background-position: center -285px;
+          position: absolute;
+          right: 15px;
+          top: 15px;
+          cursor: pointer; }
+          @media only screen and (max-width: 640px) {
+            /* line 322, ../timetostudy/main.scss */
+            .aib-interactive .calc-wrap .selectors .selecta .info-button {
+              margin-top: -60px;
+              margin-left: 36%; } }
+          @media only screen and (max-width: 480px) {
+            /* line 322, ../timetostudy/main.scss */
+            .aib-interactive .calc-wrap .selectors .selecta .info-button {
+              margin-left: 80%;
+              margin-top: -80px; } }
+        /* line 350, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .selectors .selecta input[type="text"] {
+          width: 40px;
+          font-size: 36px;
+          font-weight: 700;
+          border: none;
+          background: rgba(255, 255, 255, 0);
+          position: absolute;
+          right: 6%;
+          bottom: 20px;
+          padding: 0;
+          text-align: right; }
+        /* line 363, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .selectors .selecta input[type="range"] {
+          width: 69%;
+          -webkit-appearance: none;
+          margin: 0;
+          position: absolute;
+          bottom: 40px;
+          left: 20px; }
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            /* line 363, ../timetostudy/main.scss */
+            .aib-interactive .calc-wrap .selectors .selecta input[type="range"] {
+              bottom: 0; } }
+          /* line 90, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"]:focus {
+            outline: 0; }
+          /* line 94, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"]::-webkit-slider-runnable-track {
+            background: #1d8b2c;
+            width: 100%;
+            height: 8.8px;
+            cursor: pointer;
+            background: #1d8b2c;
+            border-radius: 4.7px;
+            border: 0 solid rgba(1, 1, 1, 0); }
+          /* line 104, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"]::-webkit-slider-thumb {
+            background: #0c0;
+            border: 0 solid transparent;
+            height: 32px;
+            width: 32px;
+            border-radius: 32px;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -11.6px; }
+          /* line 115, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"]::-moz-range-track {
+            background: #1d8b2c;
+            width: 100%;
+            height: 8.8px;
+            cursor: pointer;
+            border-radius: 4.7px;
+            border: 0 solid rgba(1, 1, 1, 0); }
+          /* line 124, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"]::-moz-range-thumb {
+            background: #0c0;
+            border: 0 solid transparent;
+            height: 32px;
+            width: 32px;
+            border-radius: 16px;
+            cursor: pointer; }
+          /* line 133, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"]::-ms-track {
+            width: 100%;
+            height: 10px;
+            cursor: pointer;
+            background: 0 0;
+            border-color: transparent;
+            color: transparent;
+            border-width: 6px 0px;
+            overflow: visible; }
+          /* line 144, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"]::-ms-fill-lower {
+            background: #1d8b2c;
+            border-radius: 9.4px;
+            border: 0 solid rgba(1, 1, 1, 0); }
+          /* line 150, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"]::-ms-fill-upper {
+            background: #0c0;
+            border-radius: 9.4px;
+            border: 0 solid rgba(1, 1, 1, 0); }
+          /* line 157, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"]::-ms-thumb {
+            background: #0c0;
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            cursor: pointer; }
+          /* line 165, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"]:focus::-ms-fill-lower {
+            background: #1d8b2c; }
+          /* line 169, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"]:focus::-ms-fill-upper {
+            background: #0c0; }
+          /* line 90, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].green:focus {
+            outline: 0; }
+          /* line 94, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].green::-webkit-slider-runnable-track {
+            background: #1d8b2c;
+            width: 100%;
+            height: 8.8px;
+            cursor: pointer;
+            background: #1d8b2c;
+            border-radius: 4.7px;
+            border: 0 solid rgba(1, 1, 1, 0); }
+          /* line 104, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].green::-webkit-slider-thumb {
+            background: #0c0;
+            border: 0 solid transparent;
+            height: 32px;
+            width: 32px;
+            border-radius: 32px;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -11.6px; }
+          /* line 115, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].green::-moz-range-track {
+            background: #1d8b2c;
+            width: 100%;
+            height: 8.8px;
+            cursor: pointer;
+            border-radius: 4.7px;
+            border: 0 solid rgba(1, 1, 1, 0); }
+          /* line 124, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].green::-moz-range-thumb {
+            background: #0c0;
+            border: 0 solid transparent;
+            height: 32px;
+            width: 32px;
+            border-radius: 16px;
+            cursor: pointer; }
+          /* line 133, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].green::-ms-track {
+            width: 100%;
+            height: 10px;
+            cursor: pointer;
+            background: 0 0;
+            border-color: transparent;
+            color: transparent;
+            border-width: 6px 0px;
+            overflow: visible; }
+          /* line 144, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].green::-ms-fill-lower {
+            background: #1d8b2c;
+            border-radius: 9.4px;
+            border: 0 solid rgba(1, 1, 1, 0); }
+          /* line 150, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].green::-ms-fill-upper {
+            background: #0c0;
+            border-radius: 9.4px;
+            border: 0 solid rgba(1, 1, 1, 0); }
+          /* line 157, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].green::-ms-thumb {
+            background: #0c0;
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            cursor: pointer; }
+          /* line 165, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].green:focus::-ms-fill-lower {
+            background: #1d8b2c; }
+          /* line 169, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].green:focus::-ms-fill-upper {
+            background: #0c0; }
+          /* line 90, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].amber:focus {
+            outline: 0; }
+          /* line 94, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].amber::-webkit-slider-runnable-track {
+            background: #d66000;
+            width: 100%;
+            height: 8.8px;
+            cursor: pointer;
+            background: #d66000;
+            border-radius: 4.7px;
+            border: 0 solid rgba(1, 1, 1, 0); }
+          /* line 104, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].amber::-webkit-slider-thumb {
+            background: #eb8f33;
+            border: 0 solid transparent;
+            height: 32px;
+            width: 32px;
+            border-radius: 32px;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -11.6px; }
+          /* line 115, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].amber::-moz-range-track {
+            background: #d66000;
+            width: 100%;
+            height: 8.8px;
+            cursor: pointer;
+            border-radius: 4.7px;
+            border: 0 solid rgba(1, 1, 1, 0); }
+          /* line 124, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].amber::-moz-range-thumb {
+            background: #eb8f33;
+            border: 0 solid transparent;
+            height: 32px;
+            width: 32px;
+            border-radius: 16px;
+            cursor: pointer; }
+          /* line 133, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].amber::-ms-track {
+            width: 100%;
+            height: 10px;
+            cursor: pointer;
+            background: 0 0;
+            border-color: transparent;
+            color: transparent;
+            border-width: 6px 0px;
+            overflow: visible; }
+          /* line 144, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].amber::-ms-fill-lower {
+            background: #d66000;
+            border-radius: 9.4px;
+            border: 0 solid rgba(1, 1, 1, 0); }
+          /* line 150, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].amber::-ms-fill-upper {
+            background: #eb8f33;
+            border-radius: 9.4px;
+            border: 0 solid rgba(1, 1, 1, 0); }
+          /* line 157, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].amber::-ms-thumb {
+            background: #eb8f33;
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            cursor: pointer; }
+          /* line 165, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].amber:focus::-ms-fill-lower {
+            background: #d66000; }
+          /* line 169, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].amber:focus::-ms-fill-upper {
+            background: #eb8f33; }
+          /* line 90, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].warning:focus {
+            outline: 0; }
+          /* line 94, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].warning::-webkit-slider-runnable-track {
+            background: #ba0e28;
+            width: 100%;
+            height: 8.8px;
+            cursor: pointer;
+            background: #ba0e28;
+            border-radius: 4.7px;
+            border: 0 solid rgba(1, 1, 1, 0); }
+          /* line 104, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].warning::-webkit-slider-thumb {
+            background: #c00;
+            border: 0 solid transparent;
+            height: 32px;
+            width: 32px;
+            border-radius: 32px;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -11.6px; }
+          /* line 115, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].warning::-moz-range-track {
+            background: #ba0e28;
+            width: 100%;
+            height: 8.8px;
+            cursor: pointer;
+            border-radius: 4.7px;
+            border: 0 solid rgba(1, 1, 1, 0); }
+          /* line 124, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].warning::-moz-range-thumb {
+            background: #c00;
+            border: 0 solid transparent;
+            height: 32px;
+            width: 32px;
+            border-radius: 16px;
+            cursor: pointer; }
+          /* line 133, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].warning::-ms-track {
+            width: 100%;
+            height: 10px;
+            cursor: pointer;
+            background: 0 0;
+            border-color: transparent;
+            color: transparent;
+            border-width: 6px 0px;
+            overflow: visible; }
+          /* line 144, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].warning::-ms-fill-lower {
+            background: #ba0e28;
+            border-radius: 9.4px;
+            border: 0 solid rgba(1, 1, 1, 0); }
+          /* line 150, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].warning::-ms-fill-upper {
+            background: #c00;
+            border-radius: 9.4px;
+            border: 0 solid rgba(1, 1, 1, 0); }
+          /* line 157, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].warning::-ms-thumb {
+            background: #c00;
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            cursor: pointer; }
+          /* line 165, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].warning:focus::-ms-fill-lower {
+            background: #ba0e28; }
+          /* line 169, ../shared/mixins.scss */
+          .aib-interactive .calc-wrap .selectors .selecta input[type="range"].warning:focus::-ms-fill-upper {
+            background: #c00; }
+        /* line 390, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .selectors .selecta .infobox {
+          position: absolute;
+          width: 260px;
+          top: 80px;
+          right: 30px;
+          background-color: #666;
+          color: #ffffff;
+          padding: 10px;
+          display: none; }
+          /* line 401, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta .infobox.shown {
+            display: block; }
+          /* line 405, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta .infobox .angletab {
+            top: -20px;
+            right: 0;
+            background-image: url("http://www.aib.edu.au/custom/files/media/life_fit_callout.png");
+            background-repeat: no-repeat;
+            background-position: top right;
+            position: absolute;
+            margin-left: 180px;
+            margin-top: -33px; }
+          /* line 416, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .selectors .selecta .infobox p {
+            font-size: 16px;
+            line-height: 20px;
+            margin: 5px 0; }
+        /* line 423, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .selectors .selecta.rhs {
+          float: right; }
+        /* line 427, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .selectors .selecta.last {
+          float: left; }
+    /* line 433, ../timetostudy/main.scss */
+    .aib-interactive .calc-wrap .study-time-grab {
+      display: none;
+      padding: 10px;
+      background-color: #1d8b2c; }
+      @media only screen and (max-width: 640px) {
+        /* line 433, ../timetostudy/main.scss */
+        .aib-interactive .calc-wrap .study-time-grab {
+          height: 100px;
+          display: none; }
+          /* line 443, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .study-time-grab.shown {
+            display: block; }
+          /* line 447, ../timetostudy/main.scss */
+          .aib-interactive .calc-wrap .study-time-grab > div {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            top: 0px;
+            bottom: auto; } }
+      /* line 455, ../timetostudy/main.scss */
+      .aib-interactive .calc-wrap .study-time-grab.amber {
+        background-color: #eb7400; }
+      /* line 459, ../timetostudy/main.scss */
+      .aib-interactive .calc-wrap .study-time-grab.warning {
+        background-color: #ba0e28; }
+      /* line 463, ../timetostudy/main.scss */
+      .aib-interactive .calc-wrap .study-time-grab h4 {
+        COLOR: #ffffff;
+        margin: 0;
+        padding: 0; }
+      /* line 468, ../timetostudy/main.scss */
+      .aib-interactive .calc-wrap .study-time-grab #studyhours {
+        font-size: 2.5em;
+        color: #ffffff; }
+  /* line 476, ../timetostudy/main.scss */
+  .aib-interactive .selectors {
+    width: 100%; }
+  @media only screen and (max-width: 640px) {
+    /* line 483, ../timetostudy/main.scss */
+    .aib-interactive .cta-block {
+      -webkit-transition: top 0.5s ease-in-out;
+      -moz-transition: top 0.5s ease-in-out;
+      -ms-transition: top 0.5s ease-in-out;
+      -o-transition: top 0.5s ease-in-out;
+      transition: top 0.5s ease-in-out;
+      top: -120px;
+      position: fixed;
+      right: 0px;
+      padding-bottom: 0;
+      margin: 0;
+      max-height: 120px;
+      overflow: hidden; } }
+  /* line 498, ../timetostudy/main.scss */
+  .aib-interactive .cta-block.shown {
+    top: 110px;
+    z-index: 9999; }
+    @media only screen and (max-width: 640px) {
+      /* line 498, ../timetostudy/main.scss */
+      .aib-interactive .cta-block.shown {
+        width: 100%; } }
+  /* line 506, ../timetostudy/main.scss */
+  .aib-interactive .cta-block .cta-box {
+    /* in this case same target as .cta-button */ }
+    @media only screen and (max-width: 640px) {
+      /* line 506, ../timetostudy/main.scss */
+      .aib-interactive .cta-block .cta-box {
+        position: absolute;
+        padding: 0;
+        left: 80%; } }
+    /* line 519, ../timetostudy/main.scss */
+    .aib-interactive .cta-block .cta-box .cta-button p {
+      font-size: 16px;
+      font-weight: 100;
+      color: #ffffff; }
+      @media only screen and (max-width: 640px) {
+        /* line 519, ../timetostudy/main.scss */
+        .aib-interactive .cta-block .cta-box .cta-button p {
+          line-height: 40px !important;
+          margin-top: 60px !important; } }
+    @media only screen and (max-width: 640px) {
+      /* line 531, ../timetostudy/main.scss */
+      .aib-interactive .cta-block .cta-box #sendtome {
+        background-color: #666;
+        background-image: url("//www.aib.edu.au/custom/files/media/email-send-arrow.png");
+        background-repeat: no-repeat;
+        background-position: center 20px;
+        height: 100px;
+        width: 75px;
+        overflow: hidden;
+        margin: 0 0; }
+        /* line 541, ../timetostudy/main.scss */
+        .aib-interactive .cta-block .cta-box #sendtome p {
+          font-weight: 100 !important; } }
+  /* line 548, ../timetostudy/main.scss */
+  .aib-interactive .cta-block .email-box {
+    height: 100px !important;
+    margin-left: 100% !important;
+    margin-top: 0px !important;
+    z-index: 0; }
+    /* line 554, ../timetostudy/main.scss */
+    .aib-interactive .cta-block .email-box .swipe-text {
+      z-index: 9999 !important;
+      bottom: 10px;
+      display: none; }
+    /* line 560, ../timetostudy/main.scss */
+    .aib-interactive .cta-block .email-box.expanded {
+      margin-left: 0 !important;
+      padding: 10px !important; }
+      /* line 564, ../timetostudy/main.scss */
+      .aib-interactive .cta-block .email-box.expanded .swipe-text {
+        display: block; }
+    @media only screen and (max-width: 640px) {
+      /* line 548, ../timetostudy/main.scss */
+      .aib-interactive .cta-block .email-box {
+        background-color: #e2e2e2; }
+        /* line 573, ../timetostudy/main.scss */
+        .aib-interactive .cta-block .email-box #button-sendemail {
+          position: absolute !important;
+          right: 0 !important;
+          top: 0 !important;
+          width: 20% !important;
+          height: 100px;
+          background-color: #666 !important;
+          border: none  !important;
+          -moz-transform: scale(1, 1);
+          -o-transform: scale(1, 1);
+          -ms-transform: scale(1, 1);
+          -webkit-transform: scale(1, 1);
+          transform: scale(1, 1); }
+        /* line 584, ../timetostudy/main.scss */
+        .aib-interactive .cta-block .email-box #sendemail {
+          background-color: #ffffff; }
+          /* line 586, ../timetostudy/main.scss */
+          .aib-interactive .cta-block .email-box #sendemail.farketo-incomplete {
+            background-color: pink; } }
+  /* line 596, ../timetostudy/main.scss */
+  .aib-interactive .teqsa-text {
+    margin: 20px 0; }
+    @media only screen and (max-width: 640px) {
+      /* line 596, ../timetostudy/main.scss */
+      .aib-interactive .teqsa-text {
+        margin-top: 0px; } }
+    /* line 601, ../timetostudy/main.scss */
+    .aib-interactive .teqsa-text a {
+      color: #d43037; }
+  /* line 607, ../timetostudy/main.scss */
+  .aib-interactive .clear {
+    clear: both; }
+
+/*** 
+*
+*  These classes can be added to the parent wrapper and used to 
+*  trigger specific behaviour for different platforms. Also provides
+*  a means to apply hotfixes for issues relating to specific website embeds
+*  by using the aib-external class in the embed code. 
+*
+*  It's good practice to supply anyone asking for an embed code with a unique classname,
+*  e.g. "aib-interactive aib-linkedin-1". This can be used to apply any fixes should parent styles 
+*  in pages the module  gets places in over-ride module styles.      
+*
+***/
+/* line 627, ../timetostudy/main.scss */
+.aib-website {
+  /* Put any special stuff specific to the AIB website in here */ }
+  @media only screen and (max-width: 640px) {
+    /* line 633, ../timetostudy/main.scss */
+    .aib-website .study-time-wrap.shown {
+      top: 0 !important;
+      margin-top: 0; }
+    /* line 641, ../timetostudy/main.scss */
+    .aib-website .cta-block.shown {
+      top: 0;
+      margin-top: 0; } }
+
+/* line 650, ../timetostudy/main.scss */
+.aib-sonar {
+  /* Put any special stuff specific to the hot site in here */ }
+
+/* line 654, ../timetostudy/main.scss */
+.aib-marketo {
+  /* Put any special stuff specific to the warm site in here */ }
+
+/* line 658, ../timetostudy/main.scss */
+.aib-external {
+  /* Put any special stuff specific to external site embeds in here */ }
+
+/***
+
+.aib-customer-id{
+    *** Put any special stuff specific to a customer site in here ***
+}
+
+***/
+
+/*# sourceMappingURL=main.css.map */

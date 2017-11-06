@@ -1,0 +1,669 @@
+/***
+*
+* Master styles for Study Time Help calculator 
+*
+***/  
+ 
+
+@import "../shared/common.scss"; 
+
+ 
+.aib-interactive{ 
+    
+    overflow:hidden;    
+    
+    .calc-wrap{
+        
+        background: $_WHITE;
+        
+        .study-time-wrap{
+            
+            width: 100%;
+            margin-top: 10px;
+            display: flex;
+            position: relative;         
+          
+            background-color: $_SLIDER_GREEN_TRACK;
+            align-items: center;
+            
+            @include respond-to(small-screen){
+                width:80% !important;
+                top:-120px;
+                left:0;
+                height:100px;
+                z-index:9998;
+                position:fixed;
+                
+                 @include transition(top .5s ease-in-out);
+                &.shown{
+                    /* position:fixed; */
+                    top:100px;      
+                   
+                   
+                }
+            }
+            
+            .study-text{
+                width: 50%;
+                background-color: $_SLIDER_GREEN_BUTTON;
+                display: flex;
+                
+                @include respond-to(small-screen){
+                    width:100%;
+                    height:30px;
+                    position:absolute;
+                    top:0px;
+                    bottom:70px;
+                   
+                }
+                
+                &.warning{
+                    background-color: $_SLIDER_RED_BUTTON;
+                }
+                
+                &.amber{
+                    background-color: $_SLIDER_AMBER_TRACK;
+                }
+                
+                h4{
+                    font-family: "Ropa Sans", Helvetica, Arial, "Lucida Grande", sans-serif; 
+                    color: $_WHITE;
+                    line-height: 24px;
+                    margin: 30px 20px;
+                    padding: 0;
+                    font-size: 20px;
+                    font-weight: 200;
+                    
+                    @include respond-to(small-screen){
+                       line-height: 14px;
+                       font-size: 18px;
+                       margin: 7px 10px;
+                    }
+                    
+                    @include respond-to(iphone-landscape){
+                        line-height: 20px;
+                        font-size: 18px;
+                    }
+                }
+            }
+            
+            .study-hours{ 
+                
+                width: 50%;
+                background-color: $_SLIDER_GREEN_TRACK;
+                display: flex;
+                
+                @include respond-to(small-screen){
+                    /* top: 30px; */
+                    position: absolute;
+                    width: 50%;
+                    /* height:70px; */
+                }
+                
+                &.warning{
+                     background-color: $_SLIDER_RED_TRACK;
+                }
+                
+                &.amber{
+                    background-color: $_SLIDER_AMBER_BUTTON;
+                }
+                
+                #studyhours{
+                    color: $_WHITE;
+                    font-size: 2.5em;
+                    line-height: 1em;
+                    width: 90%;
+                    text-align: right;
+                    margin-top: 7px; 
+                    
+                    @include respond-to(small-screen){
+                        margin-top:0px;
+                    }
+                    
+                    @include respond-to(iphone-landscape){
+                        text-align: left;
+                        margin-left:10px;
+                        font-size: 2em;
+                    }
+                }
+                
+                .study-tick{
+                    
+                    width: 40px;
+                    height: 40px;
+                    position: absolute;
+                    right: -10px;
+                    top: -14px;
+                    border: 3px solid $_SLIDER_GREEN_TRACK;
+                    background: $_WHITE;
+                    border-radius: 22px;
+                    
+                    &.warning{
+                        border: 3px solid $_SLIDER_RED_TRACK;
+                    }
+                    
+                    &.amber{
+                        border: 3px solid $_SLIDER_AMBER_TRACK;
+                    }
+                    
+                    img{
+                        margin: 6px;
+                        width: 70%;
+                    }
+                }
+            }
+            
+            .study-bar-wrap{
+                display:none;
+                position:absolute;
+                bottom:5px;
+                background: #040;
+                margin:10px;
+                width:90%;
+                overflow:hidden;
+                
+                @include respond-to(small-screen) {
+                    display:block;   
+                    bottom:auto;
+                    top:70px;                 
+                   
+                }
+                
+                &.amber{
+                    background-color: #d07000;
+                }
+                
+                &.warning{
+                    /* background-color: $_SLIDER_RED_TRACK; */
+                    background:#a00000;
+                }
+
+                .study-bar{
+                    
+                }
+                
+                #study-bar{
+                    height:5px;
+                    width:5%;
+                    background-color:$_WHITE;
+                    @include transition("width .5s ease-in-out");
+                }
+            } 
+            
+            &.amber{
+                background-color: $_SLIDER_AMBER_BUTTON;
+            }
+            
+            &.warning{
+                background-color: $_SLIDER_RED_TRACK; 
+                
+            }
+            
+        }
+        
+        .available-time{
+            
+        }
+        
+        .selectors{
+             width: 100%;
+                 
+            .selecta{
+                
+                position: relative;
+                width: 47%;
+                float: left;
+                padding: 20px 1% 80px;
+                background-color: $_GREY_SELECTA;
+                margin-bottom: 2%;
+                min-height: 160px;
+                
+                @include respond-to(medium-screens){
+                     min-height: 200px;
+                } 
+                
+                @include respond-to(small-screen){
+                    width: 100%;
+                    min-height: 0;
+                }
+                
+                @include respond-to(iphone-landscape){
+                     padding: 20px 0 80px;
+                }
+                
+                .clock-morning{
+                    
+                }
+                
+                .clock{
+                    
+                    width: 40px;
+                    height: 40px;
+                    background-size: 133%;
+                    position: absolute;
+                    top: 10px;
+                    
+                    &.work{
+                        background-position: center -165px;
+                    }
+                    
+                    &.weekend{
+                        background-position: center -115px;
+                    }
+                    
+                    &.morning{
+                         background-position: center 10px;
+                    }
+                    
+                    &.evening{
+                        background-position: center -30px;
+                    }
+                    
+                    &.commute{
+                        background-position: center -70px;
+                    }
+                    
+                }
+                                
+                p{
+                    margin: 0 40px 0 60px;
+                }
+                
+                .hidden-slider{
+                    
+                    position: absolute;
+                    width:69%;
+                    bottom:50px;
+                    display:none;
+                    
+                    &.shown{
+                         display:block;
+                    }
+                    
+                    &.warning{
+                        .slider-track{
+                             border:5px solid $_SLIDER_RED_TRACK;
+                        }
+                        
+                        .slider-knob{
+                            border:16px solid $_SLIDER_RED_KNOB;
+                        }
+                    }
+                    
+                    &.amber{
+                        .slider-track{
+                             border:5px solid $_SLIDER_AMBER_TRACK;
+                        }
+                        
+                        .slider-knob{
+                            border:16px solid $_SLIDER_AMBER_BUTTON;
+                        }
+                    }
+                    
+                    .slider-track{
+                        border:5px solid $_GREEN;
+                        border-radius:10px;
+                    }
+                    .slider-knob{
+                        position:absolute;
+                        border:16px solid $_BRIGHT_GREEN;
+                        border-radius:20px;
+                        bottom:-10px;
+                    }
+                    .slider-value{
+                        position:absolute;
+                        right: -27%;
+                        font-size:36px;
+                        font-weight:bold;
+                        bottom:-15px;
+                    }
+                }
+                
+                .info-button{
+                    display: none;
+                    width: 40px;
+                    height: 40px;
+                    background-image: url(http://www.aib.edu.au/custom/files/media/life_fit_icons.png);
+                    background-size: 175%;
+                    background-repeat: no-repeat;
+                    background-position: center -285px;
+                    position: absolute;
+                    right: 15px;
+                    top: 15px;
+                    cursor: pointer;
+                    
+                    @include respond-to(small-screen){
+                        margin-top: -60px;
+                        margin-left: 36%
+                    }
+                    
+                    @include respond-to(iphone-landscape){
+                        margin-left: 80%;
+                        margin-top: -80px
+                    }
+                }
+                
+                input{
+                    
+                }
+                
+                input[type="text"]{
+                    width: 40px;
+                    font-size: 36px;
+                    font-weight: 700;
+                    border: none;
+                    background: $_TRANSPARENT_WHITE;
+                    position: absolute;
+                    right: 6%;
+                    bottom: 20px;
+                    padding: 0;
+                    text-align: right;
+                }
+                
+                input[type="range"]{
+                    width: 69%;
+                    -webkit-appearance: none;
+                    margin: 0;
+                    position: absolute;
+                    bottom: 40px;
+                    left: 20px;
+                    
+                    @include respond-to(ms-high-contrast){
+                         bottom: 0;
+                    } 
+                    
+                    @include custom_range($_SLIDER_GREEN_TRACK, $_SLIDER_GREEN_KNOB);  
+                    
+                    &.green{
+                         @include custom_range($_SLIDER_GREEN_TRACK, $_SLIDER_GREEN_KNOB)
+                    }
+                    
+                    &.amber{
+                         @include custom_range($_SLIDER_AMBER_TRACK, $_SLIDER_AMBER_KNOB)
+                    }
+                    
+                    &.warning{
+                         @include custom_range($_SLIDER_RED_TRACK, $_SLIDER_RED_KNOB)
+                    }
+                }
+                
+                .infobox{
+                    
+                    position: absolute;
+                    width: 260px;
+                    top: 80px;
+                    right: 30px;
+                    background-color: $_VERYDARKGREY;
+                    color: $_WHITE;
+                    padding: 10px;
+                    display: none;
+                    
+                    &.shown{
+                        display: block;
+                    }
+                    
+                    .angletab{ 
+                        top: -20px;
+                        right: 0;
+                        background-image: url("http://www.aib.edu.au/custom/files/media/life_fit_callout.png");
+                        background-repeat: no-repeat;
+                        background-position: top right;
+                        position: absolute;
+                        margin-left: 180px;
+                        margin-top: -33px
+                    }
+                    
+                    p{
+                        font-size: 16px;
+                        line-height: 20px;
+                        margin: 5px 0; 
+                    }
+                }
+                
+                &.rhs{
+                    float: right;
+                }
+                
+                &.last{
+                     float: left;
+                }
+            }
+        }
+        
+        .study-time-grab{
+            display:none; 
+            padding:10px;
+            background-color:$_SLIDER_GREEN_TRACK;
+            
+            @include respond-to(small-screen){
+                
+                height:100px;  
+                display:none;  
+                
+                &.shown{
+                     display:block;
+                }
+                
+                > div{
+                    position:relative;
+                    @include margpad(0);
+                    top:0px;
+                    bottom:auto;
+                }
+            }
+            
+            &.amber{
+                background-color: $_SLIDER_AMBER_BUTTON;
+            }
+            
+            &.warning{
+                background-color: $_SLIDER_RED_TRACK;
+            }
+            
+            h4{
+                COLOR:$_WHITE;
+                @include margpad(0);
+            }
+            
+            #studyhours{
+                font-size:2.5em;
+                color:$_WHITE;
+            }
+        }
+        
+    }
+    
+    .selectors{
+        width:100%;        
+    }
+    
+    /* Overides for CTA box / email */
+    
+    
+    .cta-block {
+		
+        @include respond-to(small-screen){
+            @include transition(top 0.5s ease-in-out);
+            top:-120px;
+            position:fixed;
+            right:0px;
+            padding-bottom:0;
+            margin:0;
+            max-height:120px; 
+            overflow:hidden; 
+        }
+        
+        
+        
+        &.shown{
+            top:110px;  
+            z-index:9999;
+            @include respond-to(small-screen){
+                width:100%;
+            }
+        }
+        
+        .cta-box{            
+            @include respond-to(small-screen){
+                position: absolute;              
+                padding: 0;
+                left: 80%;
+            }
+			
+			p{}
+			a{}
+			h3{}
+			h4{}
+
+			.cta-button{                 
+                 p{
+                        font-size: 16px;
+                        font-weight: 100;
+                        color: $_WHITE;
+                        @include respond-to(small-screen){
+                            line-height:40px !important;
+                            margin-top: 60px !important;
+                        }
+				 }                
+			} 
+            
+            /* in this case same target as .cta-button */
+            #sendtome{
+                @include respond-to(small-screen){
+                    background-color:$_VERYDARKGREY;
+                    background-image: url("//www.aib.edu.au/custom/files/media/email-send-arrow.png");
+                    background-repeat: no-repeat;
+                    background-position: center 20px;
+                    height: 100px;
+                    width: 75px;
+                    overflow: hidden;
+                    margin: 0 0;  
+                    p{
+                          font-weight: 100 !important;
+                    }                   
+                }
+            }           
+		}
+
+		.email-box{
+            height: 100px !important;
+            margin-left:100% !important;
+            margin-top: 0px !important;
+            z-index:0;
+            
+            .swipe-text{
+                z-index:9999 !important;
+                bottom:10px;
+                display:none;
+            }
+            
+            &.expanded{
+                margin-left:0 !important;
+                padding: 10px !important;  
+                
+                .swipe-text{
+                    display:block;
+                }               
+            }
+            
+            @include respond-to(small-screen){
+                
+                 background-color:$_GREY_RIGHT;
+                 
+                 #button-sendemail{
+                    position: absolute !important;
+                    right: 0 !important;
+                    top: 0 !important;
+                    width: 20% !important;
+                    height: 100px;
+                    background-color: $_VERYDARKGREY !important;
+                    border:none  !important;  
+                    @include transform(scale(1,1));
+                }
+                 
+                #sendemail{
+                    background-color:$_WHITE;
+                    &.farketo-incomplete{
+                        background-color:pink;    
+                    }
+                }               
+            }            
+        }
+    }
+    
+    
+    
+    .teqsa-text {
+        margin: 20px 0;
+        @include respond-to(small-screen){
+            margin-top:0px;
+        }
+        a{
+            color: $_SLIDER_RED_BUTTON;
+        }
+    }
+    
+
+    .clear{
+        clear:both;
+    }
+    
+}
+
+/*** 
+*
+*  These classes can be added to the parent wrapper and used to 
+*  trigger specific behaviour for different platforms. Also provides
+*  a means to apply hotfixes for issues relating to specific website embeds
+*  by using the aib-external class in the embed code. 
+*
+*  It's good practice to supply anyone asking for an embed code with a unique classname,
+*  e.g. "aib-interactive aib-linkedin-1". This can be used to apply any fixes should parent styles 
+*  in pages the module  gets places in over-ride module styles.      
+*
+***/
+
+
+.aib-website{
+    /* Put any special stuff specific to the AIB website in here */
+    @include respond-to(small-screen){
+
+        .study-time-wrap{
+
+            &.shown{
+                top:0 !important;
+                margin-top:0;
+            }
+        }
+        
+        .cta-block{
+            
+            &.shown{
+                top:0;
+                margin-top:0;
+            }
+        }
+
+    }
+}
+
+.aib-sonar{
+    /* Put any special stuff specific to the hot site in here */
+}
+
+.aib-marketo{
+    /* Put any special stuff specific to the warm site in here */
+}
+
+.aib-external{
+    /* Put any special stuff specific to external site embeds in here */
+}
+
+/***
+
+.aib-customer-id{
+    *** Put any special stuff specific to a customer site in here ***
+}
+
+***/
+

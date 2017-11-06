@@ -1,0 +1,272 @@
+/***
+*
+* Master styles for FEE Help calculator 
+*
+***/  
+ 
+
+@import "../shared/common.scss"; 
+
+ 
+.aib-interactive{ 
+    
+    .calc-wrap{
+        .head-block{ 
+           
+            background: $_ALMOSTDANK;
+            
+            > div{
+                max-height: 200px; 
+            }
+            .head-left{
+                
+                width: 44%;
+                float: left;
+                padding: 3%;
+                @include respond-to(iphone-landscape) {
+                      width: 100%;
+                }
+                
+                p{ 
+                    color: $_WHITE;
+                    font-size: 20px
+                }
+                
+                input[type=text]{
+                    font-size: 22px;
+                    font-weight: 100;
+                    font-family: "Ropa Sans", Helvetica, Arial, "Lucida Grande", sans-serif; 
+                    padding: 10px;
+                    background: $_WHITE;
+                    width: 94%;
+                    @include respond-to(iphone-landscape) {
+                        width:84%;
+                    }
+                }
+            }
+            
+            .head-right{
+                width: 50%;
+                float: right;
+                overflow: hidden;
+                background-image: url(//www.aib.edu.au/custom/files/media/fee_help_heading.jpg);
+                height: 200px;
+                background-size: cover;
+            }
+        }
+         
+        .under-arrow{
+            width: 100%;
+            height: 17px;
+            background-image: url(//www.aib.edu.au/custom/files/media/fee_help_top_arrow.png);
+            background-position: 50px -5px;
+            background-repeat: no-repeat
+        }        
+    }  
+    
+    .pay-period{
+        
+        background: $_GREY_LEFT; 
+        margin:20px 0; 
+        @include respond-to(iphone-landscape) {
+            padding:10px;
+            text-align:center; 
+        }
+        
+        h4{
+            display:inline-block;
+            margin-left:20px; 
+            @include respond-to(iphone-landscape) {
+                margin-left:0px;
+                margin-top:10px;
+            }
+        }
+        
+        #pay-period-select{
+            display:inline-block;
+            padding-left:10px;
+            
+            .pay-period-button{
+                display:inline-block;
+                font-size:18px;
+                border:1px solid $_DARKGREY;
+                height:40px;
+                line-height:40px;
+                padding:0px 10px;
+                background: $_LIGHTGREY;
+                color: $_GREYBUTTON;
+                cursor:pointer;
+                
+                @include respond-to(iphone-landscape) {
+                     padding:0px 6px; 
+                }
+                
+                &.selected{
+                    color: $_DANK;
+                }
+            }
+        }
+    }
+    
+    .calc-feehelp{
+        p{
+            margin: 5px 0 0;
+            font-size: 18px;
+            line-height: 22px
+        }
+        
+        h3{
+            font-weight: 100;
+            font-size: 36px;
+            color:$_WHITE;
+            @include margpad(0);            
+            @include respond-to(iphone-landscape) {
+                font-size: 30px;      
+            }
+            
+            @include respond-to(iphone-portrait) {
+                 font-size: 26px;  
+            }
+        }
+        
+        > div{
+            @include respond-to(iphone-landscape) {
+                min-height:90px;
+            }
+        }
+        
+        
+        .calc-left{
+            width: 44%;
+            padding: 4% 3%;
+            float: left;
+            color: $_WHITE;
+            background-color: $_AIBRED2;
+            
+            h3{                 
+            }           
+        }
+        
+        .calc-right{
+            
+            width: 44%;
+            padding: 4% 3%;
+            float: right; 
+            color: #fff; 
+            background-color: $_SLIDER_RED_TRACK;
+            
+            h3{                
+            }           
+        }
+    }
+    
+    .calc-rates{  
+        margin-top: 20px;
+        background-color: $_LIGHTGREY;
+        
+        p{
+            margin: 5px 0 0;
+            font-size: 18px;
+            line-height: 22px;
+            color: $_BLACK;
+        }
+        
+        h3{
+            font-weight: 100;
+            font-size: 36px;
+            @include margpad(0);            
+            color: $_AIBRED2;
+        }  
+        
+        .calc-left{ 
+            width: 44%;
+            padding: 3%;
+            float: left;
+            color: $_WHITE;
+            background-color: $_LIGHTGREY;
+            @include respond-to(iphone-landscape) {
+                width:94%;  
+                text-align:center;
+            }
+              
+            h3{                 
+            }           
+        }
+          
+        .calc-right{
+            
+            width: 44%;
+            padding: 3%;
+            float: right;
+            color: $_WHITE;
+            background-color: $_GREY_RIGHT;
+            @include respond-to(iphone-landscape) {
+                width:94%;
+                margin-top:10px; 
+                 text-align:center;
+            }
+            
+            h3{                
+            }           
+        }
+    }
+    
+    .calc-totals{ 
+        
+        margin-top: 20px; 
+        background-color: $_LIGHTGREY;
+        
+        p{ 
+            margin: 5px 0 0;
+            font-size: 18px;
+            line-height: 22px;
+            color: $_BLACK;
+        }
+        
+        h3{            
+        }
+        
+        .calc-left{
+            width: 44%;
+            padding: 3%;
+            float: left;
+            color: $_WHITE;
+            background-color: $_GREY_LEFT;
+            @include respond-to(iphone-landscape) {
+                width:94%;  
+                 text-align:center;
+            }
+            
+            h3{ 
+                color: $_DANK;
+                font-size: 36px;
+                 font-weight: 100;
+                @include margpad(0);
+            }           
+        }
+        
+        .calc-right{
+            width: 44%;
+            padding: 3%; 
+            float: right;
+            color: $_WHITE;
+            background-color: $_GREY_RIGHT;
+            @include respond-to(iphone-landscape) {
+                width:94%; 
+                text-align:center;
+            }
+            
+            h3{ 
+                  color: $_DANK;
+                 font-weight: 100;
+                 font-size: 36px;
+                 @include margpad(0);
+            }           
+        }
+    }
+    
+    .clear{
+        clear:both;
+    }
+    
+}

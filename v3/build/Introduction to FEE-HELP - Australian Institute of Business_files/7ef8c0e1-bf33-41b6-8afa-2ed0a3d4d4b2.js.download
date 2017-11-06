@@ -1,0 +1,4 @@
+// Usersnap config - 2017-09-04 07:05:31
+var _usersnapconfig=_usersnapconfig||{};
+!function(){var a={"lang": "auto", "assigneeRequired": false, "emailBox": true, "emailRequired": true, "title": true, "consoleRecorder": false, "valign": "default", "commentBox": true, "btnText": "Feedback", "shortcut": false, "label": false, "labelRequired": false, "assignee": false, "theme": "default", "apiKey": "7ef8c0e1-bf33-41b6-8afa-2ed0a3d4d4b2", "usecase": "custom", "halign": "default", "tools": ["comment", "pen", "highlight", "note", "blackout", "arrow"], "hideTour": false, "commentRequired": false};for(var b in a)a.hasOwnProperty(b)&&(void 0!==_usersnapconfig[b]&&"apiKey"!==b||(_usersnapconfig[b]=a[b]))}();
+!function(){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="//cdn.usersnap.com/widget/loader.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}();
