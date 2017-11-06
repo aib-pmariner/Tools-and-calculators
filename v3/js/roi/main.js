@@ -317,13 +317,10 @@ var init = function(){
         debounce(loadNewData(), 250);
     })
 
-   // $jQ('#mkto-sonar').attr("src", "/custom/files/docs/sonar-form-roi.htm"); 
-
-   $jQ('#mkto-sonar').attr("src", "//ww2.aib.edu.au/sonar/leadforms/roi/");
+   
+   //$jQ('#mkto-sonar').attr("src", "//ww2.aib.edu.au/sonar/leadforms/roi/");
 
     var chart = new ROIChart();
-
-    loadNewData();   
-   
+    loadNewData();      
     
 }
